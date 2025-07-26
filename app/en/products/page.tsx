@@ -24,7 +24,7 @@ const products = [
       efficiency: "COP 4.5 - 5.8",
       warranty: "5 years compressor warranty",
     },
-    idealFor: "Yachts 25 meters and above",
+    idealFor: "Large Yachts",
   },
   {
     id: "chiller",
@@ -45,7 +45,7 @@ const products = [
       efficiency: "EER 3.8 - 4.5",
       warranty: "3 years full warranty",
     },
-    idealFor: "Mega yachts 40 meters and above",
+    idealFor: "Mega Yachts",
   },
   {
     id: "monoblock",
@@ -66,7 +66,7 @@ const products = [
       efficiency: "COP 3.5 - 4.2",
       warranty: "2 years warranty",
     },
-    idealFor: "Yachts between 10-25 meters",
+    idealFor: "Medium Yachts",
   },
 ];
 

@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "Marincool | Marine Air Conditioning Systems & Yacht Climate Expert | Antalya",
-  description: "Marincool offers professional air conditioning solutions for yacht owners with VRF, Chiller and Monoblock marine air conditioning systems. Expert boat climate service in Antalya and Alanya.",
-  keywords: "marine air conditioning systems, yacht climate, boat AC service, Marincool, VRF marine AC, Chiller marine AC, Monoblock AC, AC design, AC installation, Antalya marine AC, Alanya yacht service",
+  title: "Marincool | Marine Air Conditioning Systems & Yacht Climate Expert | Muğla",
+  description: "Marincool offers professional air conditioning solutions for yacht owners with VRF, Chiller and Monoblock marine air conditioning systems. Muğla-based expert marine air conditioning service.",
+  keywords: "marine air conditioning systems, yacht climate, boat AC service, Marincool, VRF marine AC, Chiller marine AC, Monoblock AC, AC design, AC installation, Muğla marine AC, Dalaman yacht service, Bodrum marina, Göcek yacht service",
   openGraph: {
     title: "Marincool | Marine Air Conditioning Systems & Yacht Climate Expert",
     description: "Professional marine air conditioning solutions for maximum comfort at sea. VRF, Chiller and Monoblock systems.",

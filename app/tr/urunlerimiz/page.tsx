@@ -96,7 +96,7 @@ const products = [
       efficiency: "COP 4.0 - 5.5",
       warranty: "3 yıl garanti",
     },
-    idealFor: "20-40 metre arası yatlar",
+    idealFor: "Büyük yatlar",
     icon: FaTachometerAlt,
     color: "from-purple-500 to-purple-700"
   },
@@ -119,7 +119,7 @@ const products = [
       efficiency: "COP 3.8 - 4.8",
       warranty: "2 yıl garanti",
     },
-    idealFor: "8-20 metre arası yatlar",
+    idealFor: "Küçük yatlar",
     icon: FaShieldAlt,
     color: "from-orange-500 to-orange-700"
   },

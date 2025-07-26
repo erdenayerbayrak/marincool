@@ -43,7 +43,7 @@ const services = [
     title: "Profesyonel Montaj",
     icon: FaTools,
     shortDesc: "Sertifikalı ekip ile garantili kurulum",
-    description: "Sertifikalı teknik ekibimiz, klima montajı işlemlerini uluslararası standartlarda gerçekleştiriyor. Yatınızın elektrik ve mekanik altyapısına zarar vermeden, minimum müdahaleyle maksimum verim sağlayacak şekilde kurulum yapıyoruz. Antalya marin klima montajında tercih edilen firma olarak, işçilik garantisi veriyoruz.",
+    description: "Sertifikalı teknik ekibimiz, klima montajı işlemlerini uluslararası standartlarda gerçekleştiriyor. Yatınızın elektrik ve mekanik altyapısına zarar vermeden, minimum müdahaleyle maksimum verim sağlayacak şekilde kurulum yapıyoruz. Muğla bölgesinde marin klima montajında tercih edilen firma olarak, işçilik garantisi veriyoruz.",
     process: [
       "Montaj öncesi hazırlık ve planlama",
       "Elektrik ve mekanik altyapı hazırlığı",
@@ -75,7 +75,7 @@ const services = [
     title: "7/24 Teknik Destek ve Bakım",
     icon: FaWrench,
     shortDesc: "Kesintisiz hizmet garantisi",
-    description: "Tekne klima servisi hizmetimizle denizde geçirdiğiniz her anın konforlu olmasını sağlıyoruz. Periyodik bakım programlarımız ve 7/24 acil müdahale ekibimizle, Antalya ve Alanya yat servisi bölgelerinde kesintisiz destek sunuyoruz. Arıza durumlarında hızlı müdahale, yedek parça temini ve uzman onarım hizmetleriyle yanınızdayız.",
+    description: "Tekne klima servisi hizmetimizle denizde geçirdiğiniz her anın konforlu olmasını sağlıyoruz. Periyodik bakım programlarımız ve 7/24 acil müdahale ekibimizle, Muğla, Bodrum, Göcek ve çevre bölgelerde kesintisiz destek sunuyoruz. Arıza durumlarında hızlı müdahale, yedek parça temini ve uzman onarım hizmetleriyle yanınızdayız.",
     process: [
       "Periyodik bakım programları",
       "Önleyici bakım uygulamaları",

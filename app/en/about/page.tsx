@@ -6,7 +6,7 @@ import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
         <div className="container">
@@ -38,8 +38,8 @@ export default function AboutPage() {
               <h2 className="heading-2 text-primary-navy mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
                 As Marincool, we offer special marine air conditioning systems solutions to yacht owners and 
-                shipowners with our deep experience gained in the maritime industry. Our Antalya-based company 
-                is a trusted name in the sector, with its signature on the most prestigious yachts of the Mediterranean.
+                shipowners with our deep experience gained in the maritime industry. Our Muğla-based company 
+                is a trusted name in the sector, with its signature on the most prestigious yachts of the Turkey.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 By combining our expertise in yacht air conditioning with state-of-the-art VRF marine air conditioning, 
@@ -60,7 +60,7 @@ export default function AboutPage() {
               className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <Image
-                src="/images/about-hero.jpg"
+                src="/images/yat2.jpg"
                 alt="Marincool Company"
                 fill
                 className="object-cover"
@@ -105,56 +105,26 @@ export default function AboutPage() {
               <h3 className="text-2xl font-semibold text-primary-navy mb-4">Our Vision</h3>
               <p className="text-gray-600">
                 To maintain its leading position in the field of marine air conditioning systems in Turkey and 
-                the Mediterranean region, and to raise customer satisfaction to the highest level with world-class service quality.
+                the Aegean-Mediterranean region, and to raise customer satisfaction to the highest level with world-class service quality.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Statistics */}
-      <section className="section-padding">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="heading-2 text-primary-navy mb-4">Marincool in Numbers</h2>
-            <p className="text-lg text-gray-600">Our achievements with 15 years of experience</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "15+", label: "Years Experience", icon: FaCertificate },
-              { number: "500+", label: "Happy Customers", icon: FaUsers },
-              { number: "1000+", label: "Completed Projects", icon: FaTools },
-              { number: "24/7", label: "Technical Support", icon: FaCheckCircle },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary-blue/10 rounded-full flex items-center justify-center">
-                  <stat.icon className="text-2xl text-primary-blue" />
-                </div>
-                <h3 className="text-3xl font-bold text-primary-navy mb-2">{stat.number}</h3>
-                <p className="text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-gray-light">
-        <div className="container">
+      <section className="relative section-padding bg-gray-light">
+        {/* Background Yacht Image */}
+        <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none z-0">
+          <Image
+            src="/images/yat4.jpg"
+            alt="Yacht Background"
+            fill
+            className="object-cover object-left"
+          />
+        </div>
+        <div className="container relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -245,7 +215,7 @@ export default function AboutPage() {
               className="relative h-[400px] rounded-lg overflow-hidden shadow-xl"
             >
               <Image
-                src="/images/team-photo.jpg"
+                src="/images/yat1.jpg"
                 alt="Marincool Team"
                 fill
                 className="object-cover"

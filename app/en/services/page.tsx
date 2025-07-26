@@ -43,7 +43,7 @@ const services = [
     title: "Professional Installation",
     icon: FaTools,
     shortDesc: "Guaranteed installation with certified team",
-    description: "Our certified technical team performs air conditioning installation procedures to international standards. We install without damaging your yacht's electrical and mechanical infrastructure, with minimal intervention to provide maximum efficiency. As the preferred company in Antalya marine air conditioning installation, we provide workmanship warranty.",
+    description: "Our certified technical team performs air conditioning installation procedures to international standards. We install without damaging your yacht's electrical and mechanical infrastructure, with minimal intervention to provide maximum efficiency. As the preferred company in Muğla region marine air conditioning installation, we provide workmanship warranty.",
     process: [
       "Pre-installation preparation and planning",
       "Electrical and mechanical infrastructure preparation",
@@ -75,7 +75,7 @@ const services = [
     title: "24/7 Technical Support and Maintenance",
     icon: FaWrench,
     shortDesc: "Uninterrupted service guarantee",
-    description: "With our boat air conditioning service, we ensure that every moment you spend at sea is comfortable. With our periodic maintenance programs and 24/7 emergency response team, we provide uninterrupted support in Antalya and Alanya yacht service areas. We are with you with rapid intervention in case of breakdown, spare parts supply and expert repair services.",
+    description: "With our boat air conditioning service, we ensure that every moment you spend at sea is comfortable. With our periodic maintenance programs and 24/7 emergency response team, we provide uninterrupted support in Muğla, Bodrum, Göcek and surrounding areas. We are with you with rapid intervention in case of breakdown, spare parts supply and expert repair services.",
     process: [
       "Periodic maintenance programs",
       "Preventive maintenance applications",
