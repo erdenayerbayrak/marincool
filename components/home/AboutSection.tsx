@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 interface AboutSectionProps {
   lang: "tr" | "en";
@@ -41,8 +43,18 @@ export default function AboutSection({ lang }: AboutSectionProps) {
   const t = content[lang];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container">
+    <section className="section-padding bg-white relative overflow-hidden">
+      {/* Background Yacht Image */}
+      <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
+        <Image
+          src="/images/yat4.jpg"
+          alt="Yacht Background"
+          fill
+          className="object-cover object-left"
+        />
+      </div>
+      
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
@@ -96,7 +108,8 @@ export default function AboutSection({ lang }: AboutSectionProps) {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-primary-navy to-primary-blue rounded-2xl p-8 text-white">
+            <div className="relative bg-gradient-to-br from-primary-navy to-primary-blue rounded-2xl p-8 text-white overflow-hidden">
+              <Spotlight className="from-white/10 via-white/5 to-transparent" size={200} />
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
                   <h3 className="text-3xl font-bold text-accent-green mb-2">15+</h3>

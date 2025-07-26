@@ -43,12 +43,12 @@ export default function Footer({ lang }: FooterProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/yat3.jpg"
+          src="/images/yat5.jpg"
           alt="Yacht Background"
           fill
-          className="object-cover opacity-10"
+          className="object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-primary-navy/80" />
+        <div className="absolute inset-0 bg-primary-navy/85" />
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -106,7 +106,7 @@ export default function Footer({ lang }: FooterProps) {
                 <FaFacebook className="text-2xl" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/marincool.com.tr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"

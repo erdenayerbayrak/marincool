@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
-import YachtGallery from "@/components/home/YachtGallery";
 
 export default function AboutPage() {
   return (
@@ -323,8 +322,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Yacht Gallery */}
-      <YachtGallery lang="tr" />
     </div>
   );
 }

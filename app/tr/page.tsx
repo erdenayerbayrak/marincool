@@ -9,7 +9,6 @@ import { FaCheckCircle, FaUsers, FaTools, FaClock } from "react-icons/fa";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ProductsSection from "@/components/home/ProductsSection";
-import YachtGallery from "@/components/home/YachtGallery";
 import WhyMarincool from "@/components/home/WhyMarincool";
 
 export default function HomePage() {
@@ -23,9 +22,6 @@ export default function HomePage() {
 
       {/* Products Section */}
       <ProductsSection lang="tr" />
-
-      {/* Yacht Gallery */}
-      <YachtGallery lang="tr" />
 
       {/* Why Marincool */}
       <WhyMarincool lang="tr" />

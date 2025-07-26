@@ -25,7 +25,7 @@ export default function TurkishLayout({
   return (
     <>
       <Header lang="tr" />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen pt-16">{children}</main>
       <Footer lang="tr" />
       <WhatsAppButton />
     </>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 interface WhyMarincoolProps {
   lang: "tr" | "en";

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 interface ProductsSectionProps {
   lang: "tr" | "en";
@@ -13,18 +14,43 @@ const content = {
     subtitle: "Her yat için ideal klima çözümü",
     products: [
       {
-        name: "VRF Sistemler",
+        id: "vrf",
+        name: "VRF Marin Klima",
         description: "Büyük yatlar için merkezi klima çözümü. Maksimum enerji verimliliği ve sessiz çalışma.",
+        features: ["Enerji Verimliliği", "Modüler Tasarım", "Sessiz Çalışma"],
+        ideal: "Büyük Yatlar",
         link: "İncele",
       },
       {
-        name: "Chiller Sistemler",
+        id: "chiller",
+        name: "Chiller Marin Klima",
         description: "Su soğutmalı sistem ile üstün performans. Mega yatlar için ideal çözüm.",
+        features: ["Yüksek Verimlilik", "Düşük Bakım", "Dijital Kontrol"],
+        ideal: "Mega Yatlar",
         link: "İncele",
       },
       {
-        name: "Monoblok Sistemler",
+        id: "monoblok",
+        name: "Monoblok Marin Klima",
         description: "Kompakt tasarım, kolay montaj. Orta boy yatlar için pratik çözüm.",
+        features: ["Kompakt Tasarım", "Kolay Kurulum", "Düşük Bakım"],
+        ideal: "Orta Yatlar",
+        link: "İncele",
+      },
+      {
+        id: "multi",
+        name: "Multi Marin Klima",
+        description: "Çoklu bölge kontrolü ve konfor. Farklı sıcaklık gereksinimlerini karşılar.",
+        features: ["Çoklu Kontrol", "Esneklik", "Uzaktan İzleme"],
+        ideal: "Büyük Yatlar",
+        link: "İncele",
+      },
+      {
+        id: "split",
+        name: "Split Marin Klima",
+        description: "Esnek tasarım ile hızlı ve etkili iklimlendirme çözümü.",
+        features: ["Esnek Montaj", "Enerji Tasarrufu", "Çevre Dostu"],
+        ideal: "Küçük Yatlar",
         link: "İncele",
       },
     ],
@@ -34,18 +60,43 @@ const content = {
     subtitle: "The ideal air conditioning solution for every yacht",
     products: [
       {
-        name: "VRF Systems",
+        id: "vrf",
+        name: "VRF Marine AC",
         description: "Central air conditioning solution for large yachts. Maximum energy efficiency and quiet operation.",
+        features: ["Energy Efficiency", "Modular Design", "Quiet Operation"],
+        ideal: "Large Yachts",
         link: "Explore",
       },
       {
-        name: "Chiller Systems",
+        id: "chiller",
+        name: "Chiller Marine AC",
         description: "Superior performance with water-cooled system. Ideal solution for mega yachts.",
+        features: ["High Efficiency", "Low Maintenance", "Digital Control"],
+        ideal: "Mega Yachts",
         link: "Explore",
       },
       {
-        name: "Monoblock Systems",
+        id: "monoblock",
+        name: "Monoblock Marine AC",
         description: "Compact design, easy installation. Practical solution for medium-sized yachts.",
+        features: ["Compact Design", "Easy Installation", "Low Maintenance"],
+        ideal: "Medium Yachts",
+        link: "Explore",
+      },
+      {
+        id: "multi",
+        name: "Multi Marine AC",
+        description: "Multi-zone control and comfort. Meets different temperature requirements.",
+        features: ["Multi Control", "Flexibility", "Remote Monitoring"],
+        ideal: "Large Yachts",
+        link: "Explore",
+      },
+      {
+        id: "split",
+        name: "Split Marine AC",
+        description: "Fast and effective climate control solution with flexible design.",
+        features: ["Flexible Installation", "Energy Saving", "Eco-Friendly"],
+        ideal: "Small Yachts",
         link: "Explore",
       },
     ],
@@ -69,27 +120,66 @@ export default function ProductsSection({ lang }: ProductsSectionProps) {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {t.products.map((product, index) => (
             <motion.div
-              key={index}
+              key={product.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
             >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-primary-navy mb-3">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
+              <Spotlight className="from-primary-blue/20 via-primary-navy/10 to-transparent" size={250} />
+              
+              {/* Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/5 via-primary-blue/5 to-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Card Content */}
+              <div className="relative p-6 h-full flex flex-col">
+                {/* Header */}
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-navy to-primary-blue rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-primary-navy mb-2 group-hover:text-primary-blue transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                    {product.description}
+                  </p>
+                </div>
+
+                {/* Features */}
+                <div className="mb-4 flex-grow">
+                  <div className="space-y-2">
+                    {product.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-accent-green rounded-full mr-2" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Ideal For Badge */}
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium">
+                    {product.ideal}
+                  </span>
+                </div>
+
+                {/* CTA Button */}
                 <Link
-                  href={`/${lang}/urunlerimiz#${['vrf', 'chiller', 'monoblock'][index]}`}
-                  className="btn btn-outline group"
+                  href={`/${lang}/urunlerimiz#${product.id}`}
+                  className="inline-flex items-center justify-center w-full py-2.5 px-4 bg-primary-navy text-white text-sm font-semibold rounded-xl hover:bg-primary-blue transition-all duration-300 group-hover:transform group-hover:translate-y-0 group-hover:shadow-lg"
                 >
                   {product.link}
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </motion.div>

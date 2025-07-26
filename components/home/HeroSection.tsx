@@ -49,6 +49,16 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
   return (
     <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Decorative Yacht Image */}
+      <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none z-0">
+        <Image
+          src="/images/yat6.jpg"
+          alt="Yacht Decorative"
+          fill
+          className="object-cover object-left"
+        />
+      </div>
+      
       {/* Background Images Slider */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (

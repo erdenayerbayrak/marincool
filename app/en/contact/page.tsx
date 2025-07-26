@@ -138,7 +138,7 @@ export default function ContactPage() {
                     <FaFacebook />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/marincool.com.tr/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
@@ -233,9 +233,16 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="bg-white rounded-lg shadow-lg overflow-hidden"
           >
-            <div className="h-96 bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-500">Map will be integrated here</p>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3181.123456789!2d28.777777777777!3d36.7666666666666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c0497c8c9f8b23%3A0x12345!2sCengiz%20Topel%20Cd.%20No%3A82%2FA%2C%2048770%20Dalaman%2FMu%C4%9Fla!5e0!3m2!1sen!2str!4v1234567890123!5m2!1sen!2str"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-96"
+            />
           </motion.div>
         </div>
       </section>

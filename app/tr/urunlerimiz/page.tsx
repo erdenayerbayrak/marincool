@@ -2,21 +2,24 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaCheckCircle, FaThermometerHalf, FaWind, FaTachometerAlt } from "react-icons/fa";
+import { useState } from "react";
+import { FaCheckCircle, FaThermometerHalf, FaWind, FaTachometerAlt, FaCog, FaShieldAlt } from "react-icons/fa";
+import { Spotlight } from "@/components/ui/Spotlight";
+import ProductModal from "@/components/ui/ProductModal";
 
 const products = [
   {
     id: "vrf",
-    name: "VRF Marin Klima Sistemleri",
+    name: "VRF Marin Klima Sistemi",
     shortDesc: "Büyük yatlar için merkezi klima çözümü",
-    description: "Variable Refrigerant Flow (VRF) sistemleri, büyük yatlar için en verimli ve esnek klima çözümüdür. Merkezi kontrol ile birden fazla bölgeyi bağımsız olarak iklimlendirme imkanı sunar.",
+    fullDescription: "Denizcilik endüstrisinde VRF Marin Klima Sistemleri, gemilerin iç mekanlarını ideal sıcaklıkta tutmak ve deniz yolculuklarını daha konforlu hale getirmek için kritik bir rol oynar. Marincool olarak, VRF Marin Klima Sistemleri konusundaki uzmanlığımızla denizcilik sektörüne kapsamlı hizmetler sunuyoruz.",
     features: [
-      "Maksimum enerji verimliliği (%30'a varan tasarruf)",
-      "Sessiz çalışma (45 dB altı ses seviyesi)",
-      "Bireysel bölge kontrolü",
-      "Akıllı telefon uygulaması ile uzaktan kontrol",
-      "Isıtma ve soğutma özelliği",
-      "-15°C ile +50°C arasında çalışma",
+      "Özelleştirilmiş Tasarım ve Kurulum",
+      "Bakım ve Onarım Hizmetleri",
+      "Yedek Parça Temini",
+      "Eğitim ve Danışmanlık",
+      "Enerji Verimliliği",
+      "7/24 Teknik Destek"
     ],
     specifications: {
       capacity: "12 kW - 200 kW",
@@ -24,20 +27,22 @@ const products = [
       efficiency: "COP 4.5 - 5.8",
       warranty: "5 yıl kompresör garantisi",
     },
-    idealFor: "25 metre ve üzeri yatlar",
+    idealFor: "Büyük yatlar",
+    icon: FaThermometerHalf,
+    color: "from-blue-500 to-blue-700"
   },
   {
     id: "chiller",
-    name: "Chiller Marin Klima Sistemleri",
+    name: "Chiller Marin Klima Sistemi",
     shortDesc: "Su soğutmalı sistem ile üstün performans",
-    description: "Chiller sistemleri, su soğutmalı teknolojisi ile mega yatlar için ideal çözümdür. Deniz suyu ile soğutma yaparak maksimum verimlilik sağlar ve geniş alanlarda homojen iklimlendirme sunar.",
+    fullDescription: "Deniz taşımacılığı, insanlar ve yükler için güvenli ve konforlu bir seyahat sunma konusunda kritik bir öneme sahiptir. Chiller Marin Klima Sistemi devreye girer. Denizcilik sektörü için özel olarak tasarlanan bu sistemler, gemilerin iç mekanlarını ideal sıcaklıkta tutmak ve iç hava kalitesini optimize etmek için mükemmel bir çözüm sunar.",
     features: [
-      "Deniz suyu soğutmalı yüksek verimlilik",
-      "Düşük elektrik tüketimi",
-      "Merkezi kontrol sistemi",
-      "Çok sessiz çalışma",
-      "Uzun ömürlü ve dayanıklı",
-      "Korozyon dirençli malzemeler",
+      "Yüksek Verimlilik",
+      "Modüler Tasarım",
+      "Düşük Bakım İhtiyacı",
+      "Dijital Kontrol",
+      "Çevre Dostu",
+      "Deniz Suyu Soğutmalı"
     ],
     specifications: {
       capacity: "50 kW - 500 kW",
@@ -45,20 +50,22 @@ const products = [
       efficiency: "EER 3.8 - 4.5",
       warranty: "3 yıl tam garanti",
     },
-    idealFor: "40 metre ve üzeri mega yatlar",
+    idealFor: "Mega yatlar",
+    icon: FaWind,
+    color: "from-teal-500 to-teal-700"
   },
   {
     id: "monoblok",
-    name: "Monoblok Marin Klima Sistemleri",
+    name: "Monoblok Marin Klima Sistemi",
     shortDesc: "Kompakt tasarım, kolay montaj",
-    description: "Monoblok klimalar, tüm bileşenlerin tek ünitede toplandığı kompakt sistemlerdir. Orta boy yatlar için pratik ve ekonomik çözüm sunar. Kolay montaj ve bakım avantajı sağlar.",
+    fullDescription: "Denizcilik endüstrisi, gemi iç mekanlarının konforlu bir şekilde ısıtılması ve soğutulmasını sağlama ihtiyacı duyar. Monoblok Marin Klima Sistemi, bu ihtiyacı karşılamak için özel olarak tasarlanmış bir iklimlendirme çözümüdür. Bu sistem, gemi iç mekanlarını hızlı ve etkili bir şekilde soğuturken veya ısıtırken enerji verimliliği de sağlar.",
     features: [
-      "Kompakt ve hafif tasarım",
-      "Kolay ve hızlı montaj",
-      "Düşük bakım maliyeti",
-      "Sessiz çalışma teknolojisi",
-      "Enerji tasarruflu inverter teknoloji",
-      "Otomatik nem alma özelliği",
+      "Kompakt Tasarım",
+      "Kolay Kurulum",
+      "Yüksek Verimlilik",
+      "Dijital Kontrol",
+      "Düşük Bakım İhtiyacı",
+      "Enerji Tasarrufu"
     ],
     specifications: {
       capacity: "7 kW - 35 kW",
@@ -66,13 +73,74 @@ const products = [
       efficiency: "COP 3.5 - 4.2",
       warranty: "2 yıl garanti",
     },
-    idealFor: "10-25 metre arası yatlar",
+    idealFor: "Orta boy yatlar",
+    icon: FaCog,
+    color: "from-green-500 to-green-700"
+  },
+  {
+    id: "multi",
+    name: "Multi Marin Klima Sistemi",
+    shortDesc: "Çoklu bölge kontrolü ve konfor",
+    fullDescription: "Deniz taşımacılığı, yolcuların ve gemi personelinin konforunu sağlamanın yanı sıra, iç mekanların verimli bir şekilde ısıtılması ve soğutulmasını gerektirir. Multi Marin Klima Sistemi, bu ihtiyaçları karşılamak için tasarlanmış çoklu iklim kontrolünün ve verimliliğin öne çıktığı bir sistemdir.",
+    features: [
+      "Çoklu Bölge Kontrolü",
+      "Yüksek Enerji Verimliliği",
+      "Esneklik ve Özelleştirme",
+      "Uzaktan Kontrol",
+      "Düşük Bakım Gereksinimi",
+      "İleri Teknoloji"
+    ],
+    specifications: {
+      capacity: "15 kW - 150 kW",
+      zones: "2 - 32 bölge",
+      efficiency: "COP 4.0 - 5.5",
+      warranty: "3 yıl garanti",
+    },
+    idealFor: "20-40 metre arası yatlar",
+    icon: FaTachometerAlt,
+    color: "from-purple-500 to-purple-700"
+  },
+  {
+    id: "split",
+    name: "Split Marin Klima Sistemi",
+    shortDesc: "Esnek tasarım ile hızlı iklimlendirme",
+    fullDescription: "Denizcilik endüstrisi, gemi iç mekanlarının konforlu bir şekilde ısıtılması ve soğutulmasını sağlama ihtiyacı duyar. Split Marin Klima Sistemi, bu ihtiyacı karşılamak için özel olarak tasarlanmış bir iklimlendirme çözümüdür. Bu sistem, gemi iç mekanlarını hızlı ve etkili bir şekilde soğuturken veya ısıtırken enerji verimliliği de sağlar.",
+    features: [
+      "Kompakt ve Esnek Tasarım",
+      "Kullanıcı Dostu Kontrol",
+      "Yüksek Enerji Verimliliği",
+      "Kolay Bakım ve Onarım",
+      "Çevre Dostu",
+      "Hızlı Kurulum"
+    ],
+    specifications: {
+      capacity: "5 kW - 25 kW",
+      type: "İç-Dış ünite ayrımı",
+      efficiency: "COP 3.8 - 4.8",
+      warranty: "2 yıl garanti",
+    },
+    idealFor: "8-20 metre arası yatlar",
+    icon: FaShieldAlt,
+    color: "from-orange-500 to-orange-700"
   },
 ];
 
 export default function ProductsPage() {
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (product: typeof products[0]) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
         <div className="container">
@@ -85,105 +153,85 @@ export default function ProductsPage() {
             <h1 className="heading-1 mb-6">Premium Marin Klima Sistemleri</h1>
             <p className="text-xl max-w-3xl mx-auto opacity-90">
               Yatınızın büyüklüğü ve ihtiyaçlarına özel, dünya standartlarında klima çözümleri sunuyoruz. 
-              VRF, Chiller ve Monoblok sistemlerimizle denizde maksimum konfor garantisi.
+              Her boyut yat için ideal iklimlendirme sistemleri ile denizde maksimum konfor garantisi.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Products Section */}
+      {/* Products Grid */}
       <section className="section-padding">
         <div className="container">
-          {products.map((product, index) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`mb-20 ${index !== products.length - 1 ? "pb-20 border-b border-gray-200" : ""}`}
-            >
-              <div className="max-w-4xl mx-auto">
-                {/* Content */}
-                <div>
-                  <h2 className="heading-2 text-primary-navy mb-4">{product.name}</h2>
-                  <p className="text-lg text-gray-600 mb-6">{product.description}</p>
-
-                  {/* Features */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-primary-navy mb-4">Özellikler</h3>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, i) => (
-                        <li key={i} className="flex items-start space-x-3">
-                          <FaCheckCircle className="text-accent-green mt-1 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {products.map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+              >
+                <Spotlight className="from-primary-blue/20 via-primary-navy/10 to-transparent" size={300} />
+                
+                {/* Card Header */}
+                <div className={`h-32 bg-gradient-to-r ${product.color} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/10" />
+                  <div className="relative h-full flex items-center justify-center">
+                    <product.icon className="text-4xl text-white" />
                   </div>
-
-                  {/* Specifications */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 p-6 bg-gray-light rounded-lg">
-                    <div>
-                      <FaThermometerHalf className="text-primary-blue mb-2" />
-                      <p className="text-sm text-gray-600">Kapasite</p>
-                      <p className="font-semibold">{product.specifications.capacity}</p>
-                    </div>
-                    <div>
-                      <FaTachometerAlt className="text-primary-blue mb-2" />
-                      <p className="text-sm text-gray-600">Verimlilik</p>
-                      <p className="font-semibold">{product.specifications.efficiency}</p>
-                    </div>
-                  </div>
-
-                  {/* Ideal For */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-gray-600">İdeal Kullanım</p>
-                      <p className="font-semibold text-primary-navy">{product.idealFor}</p>
-                    </div>
-                    <Link href="#teklif-form" className="btn btn-primary">
-                      Teklif Al
-                    </Link>
+                  <div className="absolute bottom-4 left-6 text-white">
+                    <h3 className="text-lg font-bold">{product.name}</h3>
+                    <p className="text-sm opacity-90">{product.shortDesc}</p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* Card Content */}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium">
+                      {product.idealFor}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    {product.fullDescription.substring(0, 150)}...
+                  </p>
+
+                  {/* Quick Features */}
+                  <div className="space-y-2 mb-6">
+                    {product.features.slice(0, 3).map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-sm text-gray-700">
+                        <FaCheckCircle className="text-accent-green mr-2 text-xs" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <button
+                    onClick={() => openModal(product)}
+                    className="inline-flex items-center justify-center w-full py-3 px-4 bg-primary-navy text-white font-semibold rounded-xl hover:bg-primary-blue transition-all duration-300 group-hover:transform group-hover:scale-105"
+                  >
+                    Detaylı Bilgi
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-navy">
-        <div className="container text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="heading-2 text-white mb-6">
-              Yatınız İçin En Uygun Sistemi Seçmenize Yardımcı Olalım
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Uzman ekibimiz, yatınızın özelliklerini analiz ederek size özel klima çözümü sunar.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://wa.me/905555555555" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary text-lg"
-              >
-                WhatsApp&apos;tan Ulaşın
-              </a>
-              <Link href="/tr/iletisim" className="btn btn-secondary text-lg">
-                İletişim Formu
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
+      {/* Product Modal */}
+      <ProductModal 
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 }
