@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 // Structured Data for About Page
 const organizationSchema = {
@@ -157,24 +158,29 @@ export default function AboutPage() {
         />
       </Head>
       
-    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center text-white"
-          >
-            <h1 className="heading-1 mb-6">Türkiye&apos;nin Lider Marin Klima Sistemleri Uzmanı</h1>
-            <p className="text-xl max-w-3xl mx-auto opacity-90">
-              Marincool olarak, denizcilik sektöründe edindiğimiz köklü deneyimle yat sahiplerine ve 
-              armatörlere özel marin klima sistemleri çözümleri sunuyoruz.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <WavyBackground
+        backgroundFill="#1B2951"
+        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
+        waveWidth={50}
+        blur={10}
+        speed="slow"
+        waveOpacity={0.3}
+        containerClassName="h-[50vh] min-h-[400px]"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-white"
+        >
+          <h1 className="heading-1 mb-6">Türkiye&apos;nin Lider Marin Klima Sistemleri Uzmanı</h1>
+          <p className="text-xl max-w-3xl mx-auto opacity-90">
+            Marincool olarak, denizcilik sektöründe edindiğimiz köklü deneyimle yat sahiplerine ve 
+            armatörlere özel marin klima sistemleri çözümleri sunuyoruz.
+          </p>
+        </motion.div>
+      </WavyBackground>
 
       {/* Company Story */}
       <section className="section-padding">
@@ -269,12 +275,12 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <section className="relative section-padding bg-gray-light">
         {/* Background Yacht Image */}
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none z-0">
+        <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
           <Image
-            src="/images/yat4.jpg"
+            src="/images/yat5.jpg"
             alt="Yacht Background"
             fill
-            className="object-cover object-left"
+            className="object-cover"
           />
         </div>
         <div className="container relative z-10">
@@ -442,8 +448,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
-    </div>
     </>
   );
 }

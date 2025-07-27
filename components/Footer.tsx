@@ -148,7 +148,7 @@ export default function Footer({ lang }: FooterProps) {
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          <p>&copy; 2024 Marincool. {t.rights}</p>
+          <p>&copy; 2025 Marincool. {t.rights}</p>
         </div>
       </div>
     </footer>

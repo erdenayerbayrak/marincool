@@ -36,8 +36,17 @@ export default function WhyMarincool({ lang }: WhyMarincoolProps) {
 
   return (
     <section className="relative py-12 bg-gray-50">
+      {/* Background Yacht Image */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
+        <Image
+          src="/images/yat5.jpg"
+          alt="Yacht Background"
+          fill
+          className="object-cover"
+        />
+      </div>
 
-      <div className="container">
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold text-primary-navy mb-3">{t.title}</h2>

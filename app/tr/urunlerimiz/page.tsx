@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import { useState, useCallback, useMemo } from "react";
+import { motion } from "framer-motion";
 import { FaCheckCircle, FaThermometerHalf, FaWind, FaTachometerAlt, FaCog, FaShieldAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 // Lazy load modal for better performance
 const ProductModal = dynamic(() => import("@/components/ui/ProductModal"), {
@@ -241,19 +244,29 @@ export default function ProductsPage() {
         />
       </Head>
       
-    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
-        <div className="container">
-          <div className="text-center text-white">
-            <h1 className="heading-1 mb-6">Premium Marin Klima Sistemleri</h1>
-            <p className="text-xl max-w-3xl mx-auto opacity-90">
-              Yatınızın büyüklüğü ve ihtiyaçlarına özel, dünya standartlarında klima çözümleri sunuyoruz. 
-              Her boyut yat için ideal iklimlendirme sistemleri ile denizde maksimum konfor garantisi.
-            </p>
-          </div>
-        </div>
-      </section>
+      <WavyBackground
+        backgroundFill="#1B2951"
+        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
+        waveWidth={50}
+        blur={10}
+        speed="slow"
+        waveOpacity={0.3}
+        containerClassName="h-[50vh] min-h-[400px]"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-white"
+        >
+          <h1 className="heading-1 mb-6">Premium Marin Klima Sistemleri</h1>
+          <p className="text-xl max-w-3xl mx-auto opacity-90">
+            Yatınızın büyüklüğü ve ihtiyaçlarına özel, dünya standartlarında klima çözümleri sunuyoruz. 
+            Her boyut yat için ideal iklimlendirme sistemleri ile denizde maksimum konfor garantisi.
+          </p>
+        </motion.div>
+      </WavyBackground>
 
       {/* Products Grid */}
       <section className="section-padding">
@@ -268,7 +281,7 @@ export default function ProductsPage() {
                 {/* Card Header */}
                 <div className={`h-32 bg-gradient-to-r ${product.color} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/10" />
-                  <div className="relative h-full flex items-center justify-center">
+                  <div className="relative h-full flex items-start justify-center pt-3">
                     <product.icon className="text-4xl text-white" />
                   </div>
                   <div className="absolute bottom-4 left-6 text-white">
@@ -323,7 +336,6 @@ export default function ProductsPage() {
         isOpen={isModalOpen}
         onClose={closeModal}
       />
-    </div>
     </>
   );
 }

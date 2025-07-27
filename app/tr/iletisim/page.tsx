@@ -5,6 +5,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 // Structured Data for Contact Page
 const localBusinessSchema = {
@@ -192,25 +193,31 @@ export default function ContactPage() {
       
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center text-white"
-          >
-            <h1 className="heading-1 mb-6">İletişim</h1>
-            <p className="text-xl max-w-3xl mx-auto opacity-90">
-              Yatınızın marin klima sistemleri konusunda uzman ekibimizle iletişime geçin. 
-              Size en uygun çözümü sunmaya hazırız.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <WavyBackground
+        backgroundFill="#1B2951"
+        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
+        waveWidth={50}
+        blur={10}
+        speed="slow"
+        waveOpacity={0.3}
+        containerClassName="h-[50vh] min-h-[400px]"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-white"
+        >
+          <h1 className="heading-1 mb-6">İletişim</h1>
+          <p className="text-xl max-w-3xl mx-auto opacity-90">
+            Yatınızın marin klima sistemleri konusunda uzman ekibimizle iletişime geçin. 
+            Size en uygun çözümü sunmaya hazırız.
+          </p>
+        </motion.div>
+      </WavyBackground>
 
       {/* Contact Info & Form Section */}
-      <section className="relative section-padding">
+      <section className="relative pb-8 sm:pb-12 md:pb-16 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image

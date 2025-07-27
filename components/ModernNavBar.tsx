@@ -133,31 +133,6 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
 
             {/* Desktop Right Section */}
             <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
-              {/* Language Switcher */}
-              <div className="flex items-center space-x-1 bg-gray-100 rounded-full p-1">
-                <Link
-                  href="/tr"
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-semibold rounded-full transition-all",
-                    lang === "tr"
-                      ? "bg-primary-navy text-white"
-                      : "text-gray-600 hover:text-gray-800"
-                  )}
-                >
-                  TR
-                </Link>
-                <Link
-                  href="/en"
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-semibold rounded-full transition-all",
-                    lang === "en"
-                      ? "bg-primary-navy text-white"
-                      : "text-gray-600 hover:text-gray-800"
-                  )}
-                >
-                  EN
-                </Link>
-              </div>
 
               {/* WhatsApp Button */}
               <a
@@ -173,31 +148,6 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
 
             {/* Mobile Right Section - Compact */}
             <div className="flex lg:hidden items-center space-x-2 flex-shrink-0">
-              {/* Mobile Language Switcher - Ultra Compact */}
-              <div className="flex items-center bg-gray-100 rounded-full p-0.5">
-                <Link
-                  href="/tr"
-                  className={cn(
-                    "px-2 py-0.5 text-xs font-semibold rounded-full transition-all",
-                    lang === "tr"
-                      ? "bg-primary-navy text-white"
-                      : "text-gray-600"
-                  )}
-                >
-                  TR
-                </Link>
-                <Link
-                  href="/en"
-                  className={cn(
-                    "px-2 py-0.5 text-xs font-semibold rounded-full transition-all",
-                    lang === "en"
-                      ? "bg-primary-navy text-white"
-                      : "text-gray-600"
-                  )}
-                >
-                  EN
-                </Link>
-              </div>
 
               {/* Mobile WhatsApp Button - Compact */}
               <a
@@ -323,7 +273,7 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                   </a>
                   
                   <div className="text-center text-sm text-gray-500">
-                    <p>© 2024 Marincool</p>
+                    <p>© 2025 Marincool</p>
                   </div>
                 </div>
               </div>
