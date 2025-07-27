@@ -15,7 +15,6 @@ const content = {
     rights: "Tüm hakları saklıdır.",
     links: [
       { name: "Ürünlerimiz", href: "/tr/urunlerimiz" },
-      { name: "Hizmetlerimiz", href: "/tr/hizmetlerimiz" },
       { name: "Hakkımızda", href: "/tr/hakkimizda" },
       { name: "İletişim", href: "/tr/iletisim" },
     ],
@@ -28,7 +27,6 @@ const content = {
     rights: "All rights reserved.",
     links: [
       { name: "Products", href: "/en/products" },
-      { name: "Services", href: "/en/services" },
       { name: "About", href: "/en/about" },
       { name: "Contact", href: "/en/contact" },
     ],

@@ -8,7 +8,7 @@ import { FaCheckCircle, FaUsers, FaTools, FaClock } from "react-icons/fa";
 // Components
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
-import ProductsSection from "@/components/home/ProductsSection";
+import ServicesSection from "@/components/home/ProductsSection";
 import WhyMarincool from "@/components/home/WhyMarincool";
 
 // Structured Data for Homepage
@@ -95,8 +95,8 @@ export default function HomePage() {
       {/* About Section */}
       <AboutSection lang="tr" />
 
-      {/* Products Section */}
-      <ProductsSection lang="tr" />
+      {/* Services Section */}
+      <ServicesSection lang="tr" />
 
       {/* Why Marincool */}
       <WhyMarincool lang="tr" />

@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 interface AboutSectionProps {
   lang: "tr" | "en";
@@ -12,29 +10,15 @@ interface AboutSectionProps {
 
 const content = {
   tr: {
-    title: "Hakkımızda",
-    subtitle: "Türkiye'nin Lider Marin Klima Sistemleri Uzmanı",
-    description: "Marincool olarak, yılların verdiği deneyimle sizlere en iyi hizmeti sunmayı taahhüt ediyoruz. Müşteri memnuniyetini her zaman önceliğimiz olarak kabul ediyor ve her işimizi bu felsefeyle gerçekleştiriyoruz. Gelişmiş teknolojileri ve uzman kadromuzu bir araya getirerek, müşterilerimize kaliteli ürünler ve hizmetler sunmayı amaçlıyoruz.",
-    highlights: [
-      "Güvenilirlik, kalite ve mükemmel hizmet",
-      "Sürekli gelişim ve yenilik odaklı yaklaşım", 
-      "Uzman kadro ve gelişmiş teknoloji",
-      "Müşteri memnuniyeti öncelikli hizmet anlayışı"
-    ],
-    cta: "Detaylı Bilgi",
+    title: "MARINCOOL DÜNYASINI KEŞFEDİN",
+    description: "30 yılı aşkın süredir müşterilerimizi memnun ediyor ve teknik bilgi birikimimizi sürekli geliştiriyoruz. Hizmet yelpazemiz, sizin ve yatınızın ihtiyaç duyduğu her şeyi kapsıyor.",
+    cta: "Daha fazla bilgi edin",
     link: "/tr/hakkimizda"
   },
   en: {
-    title: "About Us",
-    subtitle: "Turkey's Leading Marine Air Conditioning Systems Expert",
-    description: "As Marincool, we commit to providing you with the best service with years of experience. We always consider customer satisfaction as our priority and carry out all our work with this philosophy. By bringing together advanced technologies and our expert staff, we aim to provide quality products and services to our customers.",
-    highlights: [
-      "Reliability, quality and excellent service",
-      "Continuous development and innovation-focused approach",
-      "Expert staff and advanced technology", 
-      "Customer satisfaction priority service approach"
-    ],
-    cta: "Learn More",
+    title: "DISCOVER THE MARINCOOL WORLD",
+    description: "We have been satisfying our customers for over 30 years and continuously improving our technical knowledge. Our service range covers everything you and your yacht need.",
+    cta: "Learn more",
     link: "/en/about"
   },
 };
@@ -43,95 +27,165 @@ export default function AboutSection({ lang }: AboutSectionProps) {
   const t = content[lang];
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
-      {/* Background Yacht Image */}
-      <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
-        <Image
-          src="/images/yat4.jpg"
-          alt="Yacht Background"
-          fill
-          sizes="50vw"
-          className="object-cover object-left"
-        />
-      </div>
-      
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-4">
-              <span className="text-accent-green font-semibold text-sm tracking-wide uppercase">
-                {t.title}
-              </span>
-              <h2 className="heading-2 text-primary-navy mt-2 mb-6">{t.subtitle}</h2>
-            </div>
+    <section className="relative overflow-hidden min-h-screen bg-gradient-to-br from-[#1e3a5f] via-[#2563eb] to-[#1e40af]">
+      {/* Real Ocean Wave Background with white foam */}
+      <div className="absolute inset-0">
+        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 800">
+          {/* Deep ocean base */}
+          <rect width="1440" height="800" fill="url(#oceanDepthGradient)" />
+          
+          <defs>
+            <linearGradient id="oceanDepthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1e3a8a"/>
+              <stop offset="30%" stopColor="#1e40af"/>
+              <stop offset="60%" stopColor="#2563eb"/>
+              <stop offset="100%" stopColor="#3b82f6"/>
+            </linearGradient>
             
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              {t.description}
-            </p>
-
-            {/* Highlights */}
-            <ul className="space-y-4 mb-8">
-              {t.highlights.map((highlight, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-3"
-                >
-                  <FaCheckCircle className="text-accent-green mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">{highlight}</span>
-                </motion.li>
-              ))}
-            </ul>
-
-            <Link 
-              href={t.link}
-              className="inline-flex items-center space-x-2 text-primary-blue hover:text-primary-navy font-semibold transition-colors group"
-            >
-              <span>{t.cta}</span>
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-
-          {/* Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative"
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8"/>
+              <stop offset="50%" stopColor="#e0f2fe" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#bfdbfe" stopOpacity="0.4"/>
+            </linearGradient>
+            
+            <linearGradient id="foamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9"/>
+              <stop offset="100%" stopColor="#f8fafc" stopOpacity="0.7"/>
+            </linearGradient>
+          </defs>
+          
+          {/* Main wave layers */}
+          <path
+            d="M0,400 C360,280 480,520 720,400 C960,280 1080,520 1440,400 L1440,800 L0,800 Z"
+            fill="url(#waveGradient)"
           >
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/yat1.jpg"
-                alt="Marincool Marine Services"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+            <animate
+              attributeName="d"
+              values="M0,400 C360,280 480,520 720,400 C960,280 1080,520 1440,400 L1440,800 L0,800 Z;
+                      M0,420 C360,300 480,540 720,420 C960,300 1080,540 1440,420 L1440,800 L0,800 Z;
+                      M0,400 C360,280 480,520 720,400 C960,280 1080,520 1440,400 L1440,800 L0,800 Z"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </path>
+          
+          {/* Secondary wave */}
+          <path
+            d="M0,500 C240,380 600,620 960,500 C1200,380 1320,620 1440,500 L1440,800 L0,800 Z"
+            fill="url(#foamGradient)"
+          >
+            <animate
+              attributeName="d"
+              values="M0,500 C240,380 600,620 960,500 C1200,380 1320,620 1440,500 L1440,800 L0,800 Z;
+                      M0,520 C240,400 600,640 960,520 C1200,400 1320,640 1440,520 L1440,800 L0,800 Z;
+                      M0,500 C240,380 600,620 960,500 C1200,380 1320,620 1440,500 L1440,800 L0,800 Z"
+              dur="12s"
+              repeatCount="indefinite"
+            />
+          </path>
+          
+          {/* Foam detail */}
+          <path
+            d="M0,600 C180,500 300,700 480,600 C660,500 780,700 960,600 C1140,500 1260,700 1440,600 L1440,800 L0,800 Z"
+            fill="#ffffff"
+            fillOpacity="0.3"
+          >
+            <animate
+              attributeName="d"
+              values="M0,600 C180,500 300,700 480,600 C660,500 780,700 960,600 C1140,500 1260,700 1440,600 L1440,800 L0,800 Z;
+                      M0,620 C180,520 300,720 480,620 C660,520 780,720 960,620 C1140,520 1260,720 1440,620 L1440,800 L0,800 Z;
+                      M0,600 C180,500 300,700 480,600 C660,500 780,700 960,600 C1140,500 1260,700 1440,600 L1440,800 L0,800 Z"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+      </div>
+
+      {/* Content Container */}
+      <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
+        {/* Sol Sütun - Yacht Image with Waves */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2 }}
+          viewport={{ once: true }}
+          className="relative w-full lg:w-1/2 h-[50vh] lg:h-screen order-2 lg:order-1 overflow-hidden"
+        >
+          {/* Yacht Image */}
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src="/images/yat1.jpg"
+              alt="Luxury Yacht in Ocean"
+              fill
+              sizes="50vw"
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          
+          {/* Yacht overlay with wave cut */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 lg:to-white/40" />
+          
+          {/* Wave cut effect for desktop */}
+          <div className="hidden lg:block absolute right-0 top-0 h-full w-32">
+            <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+              <path
+                d="M0,0 Q50,25 100,0 L100,100 Q50,75 0,100 Z"
+                fill="rgba(255,255,255,0.9)"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/80 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">
-                  {lang === "tr" ? "Profesyonel Marin Klima Çözümleri" : "Professional Marine Climate Solutions"}
-                </h3>
-                <p className="opacity-90">
-                  {lang === "tr" 
-                    ? "Yatınızın konforu için en kaliteli hizmeti sunuyoruz."
-                    : "We provide the highest quality service for your yacht's comfort."
-                  }
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            </svg>
+          </div>
+        </motion.div>
+
+        {/* Sağ Sütun - Content Area */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="relative w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2 py-16 lg:py-0"
+        >
+          {/* White content background */}
+          <div className="absolute inset-0 bg-white/95 lg:bg-white/90" />
+          
+          {/* Content */}
+          <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-24 max-w-2xl lg:max-w-xl text-center lg:text-left">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-[#1e3a5f] leading-tight mb-8 tracking-tight"
+            >
+              {t.title}
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="text-base lg:text-lg xl:text-xl text-gray-700 leading-relaxed mb-10 font-light"
+            >
+              {t.description}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              viewport={{ once: true }}
+            >
+              <Link 
+                href={t.link}
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white transition-all duration-300 font-medium tracking-wide text-lg"
+              >
+                {t.cta}
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
