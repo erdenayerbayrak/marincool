@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPostsTR } from '@/lib/blog-data';
+import { seoContent } from '@/lib/static-content';
 
 export const metadata: Metadata = {
   title: "Marin Klima Blog | Denizcilik İklim Sistemleri | Marincool Muğla",
@@ -184,6 +185,24 @@ export default function BlogPage() {
                   <strong>Özel Hizmetler:</strong> Yat kliması, tekne klima servisi, marin klima bakımı, 
                   acil klima tamiri, klima montajı, sistem projelendirme
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* SEO İçerik Alanı */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-white p-8">
+              <div className="prose prose-lg max-w-none">
+                <div 
+                  style={{ 
+                    lineHeight: '1.6',
+                    fontSize: '16px',
+                    color: '#374151',
+                    whiteSpace: 'pre-line'
+                  }}
+                >
+                  {seoContent.tr}
+                </div>
               </div>
             </div>
           </div>

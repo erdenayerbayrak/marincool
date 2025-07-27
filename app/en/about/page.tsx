@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Head from "next/head";
+import Script from "next/script";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
 import { WavyBackground } from "@/components/ui/wavy-background";
 
@@ -124,39 +124,31 @@ const breadcrumbSchema = {
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        {/* Enhanced Meta Tags */}
-        <title>About Us - Turkey&apos;s Leading Marine Climate Expert | Marincool Muğla</title>
-        <meta name="description" content="15 years of experience in marine air conditioning since 2008. Muğla-based Marincool provides professional yacht solutions with VRF, Chiller and Monoblock systems." />
-        <meta name="keywords" content="About Marincool, marine AC expert, yacht climate company, Muğla marine AC, experienced yacht service, marine climate history" />
-        <link rel="canonical" href="https://marincool.com/en/about" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="About Us - Turkey&apos;s Leading Marine Climate Expert | Marincool" />
-        <meta property="og:description" content="15 years of experience as Turkey&apos;s most trusted marine air conditioning company. Serving all Turkey from Muğla." />
-        <meta property="og:url" content="https://marincool.com/en/about" />
-        <meta property="og:type" content="website" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema)
-          }}
-        />
-      </Head>
+      {/* Structured Data Scripts */}
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema)
+        }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
       
       {/* Hero Section */}
       <WavyBackground

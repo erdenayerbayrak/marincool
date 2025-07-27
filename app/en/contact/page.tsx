@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Head from "next/head";
+import Script from "next/script";
 import Image from "next/image";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
 import { WavyBackground } from "@/components/ui/wavy-background";
@@ -151,47 +151,32 @@ export default function ContactPage() {
 
   return (
     <>
-      <Head>
-        {/* Enhanced Meta Tags */}
-        <title>Contact - Marine AC Expert | Marincool Turkey | WhatsApp: +90 551 508 50 85</title>
-        <meta name="description" content="Contact Marincool! Marine AC service in Muğla, Bodrum, Göcek. WhatsApp: +90 551 508 50 85. Quick quotes and 24/7 emergency service." />
-        <meta name="keywords" content="Marincool contact, Muğla marine AC, Dalaman yacht service, WhatsApp marine AC, emergency AC service, yacht climate phone" />
-        <link rel="canonical" href="https://marincool.com/en/contact" />
-        
-        {/* Local Business Markup */}
-        <meta name="geo.region" content="TR-48" />
-        <meta name="geo.placename" content="Dalaman, Muğla" />
-        <meta name="geo.position" content="36.7666666;28.7777777" />
-        <meta name="ICBM" content="36.7666666, 28.7777777" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Contact - Marine AC Expert | Marincool Turkey" />
-        <meta property="og:description" content="Quick WhatsApp contact: +90 551 508 50 85. Muğla's most trusted marine air conditioning service." />
-        <meta property="og:url" content="https://marincool.com/en/contact" />
-        <meta property="og:type" content="website" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(contactPageSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema)
-          }}
-        />
-      </Head>
+      {/* Structured Data Scripts */}
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema)
+        }}
+      />
+      <Script
+        id="contact-page-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactPageSchema)
+        }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
       
-    <div className="min-h-screen">
       {/* Hero Section */}
       <WavyBackground
         backgroundFill="#1B2951"
@@ -428,7 +413,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </section>
-    </div>
     </>
   );
 }

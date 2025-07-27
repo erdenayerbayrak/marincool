@@ -1,9 +1,5 @@
 import { Metadata } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaCheckCircle, FaUsers, FaTools, FaClock } from "react-icons/fa";
+import Script from "next/script";
 
 // Components
 import HeroSection from "@/components/home/HeroSection";
@@ -66,28 +62,23 @@ const breadcrumbSchema = {
 export default function HomePage() {
   return (
     <>
-      <Head>
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema)
-          }}
-        />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//wa.me" />
-      </Head>
+      {/* Structured Data */}
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
       
       {/* Hero Section */}
       <HeroSection lang="en" />

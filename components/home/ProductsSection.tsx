@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServicesSectionProps {
   lang: "tr" | "en";
@@ -68,7 +69,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
   const t = content[lang];
 
   return (
-    <section className="relative bg-[#006994] pb-0 overflow-hidden">
+    <section className="relative bg-primary-navy pb-0 overflow-hidden">
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
         {/* Service Cards */}
@@ -86,16 +87,23 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
                 className="group relative block h-80 md:h-96 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${service.image})` }}
-                />
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} ${service.subtitle}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                </div>
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-black/50 z-10" />
                 
                 {/* Content */}
-                <div className="relative z-10 flex h-full flex-col justify-center items-center text-center p-8">
+                <div className="relative z-20 flex h-full flex-col justify-center items-center text-center p-8">
                   <div className="text-white">
                     <div className="text-2xl lg:text-3xl font-bold uppercase tracking-wider leading-tight mb-2">
                       {service.title}

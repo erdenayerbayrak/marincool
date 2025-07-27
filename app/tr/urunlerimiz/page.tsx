@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Head from "next/head";
+import Script from "next/script";
 import Image from "next/image";
 import { useState, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -216,33 +216,23 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Head>
-        {/* Enhanced Meta Tags */}
-        <title>Premium Marin Klima Sistemleri - VRF, Chiller, Monoblok | Marincool Muğla</title>
-        <meta name="description" content="Yatınız için ideal marin klima sistemi seçenekleri: VRF, Chiller, Monoblok, Multi ve Split sistemler. Uzman montaj ve garanti ile Muğla'da hizmet." />
-        <meta name="keywords" content="marin klima sistemleri, yat kliması, VRF marin klima, Chiller yat kliması, Monoblok klima, Multi sistem, Split klima, Muğla marin klima" />
-        <link rel="canonical" href="https://marincool.com/tr/urunlerimiz" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Premium Marin Klima Sistemleri | Marincool" />
-        <meta property="og:description" content="Büyük yatlardan küçük teknelere kadar her boyut için özel klima çözümleri. 5 farklı sistem seçeneği." />
-        <meta property="og:url" content="https://marincool.com/tr/urunlerimiz" />
-        <meta property="og:type" content="website" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productsPageSchema)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema)
-          }}
-        />
-      </Head>
+      {/* Structured Data Scripts */}
+      <Script
+        id="products-page-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productsPageSchema)
+        }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
       
       {/* Hero Section */}
       <WavyBackground

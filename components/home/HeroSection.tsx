@@ -37,7 +37,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src="/videos/herovideo.mp4" type="video/mp4" />
         </video>

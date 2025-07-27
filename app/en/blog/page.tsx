@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPostsEN } from '@/lib/blog-data';
+import { seoContent } from '@/lib/static-content';
 
 export const metadata: Metadata = {
   title: "Marine AC Blog | Yacht Climate Systems | Marincool Muğla",
@@ -184,6 +185,24 @@ export default function BlogPage() {
                   <strong>Special Services:</strong> Yacht air conditioning, boat AC service, marine AC maintenance, 
                   emergency AC repair, AC installation, system design
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* SEO Content Area */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-white p-8">
+              <div className="prose prose-lg max-w-none">
+                <div 
+                  style={{ 
+                    lineHeight: '1.6',
+                    fontSize: '16px',
+                    color: '#374151',
+                    whiteSpace: 'pre-line'
+                  }}
+                >
+                  {seoContent.en}
+                </div>
               </div>
             </div>
           </div>

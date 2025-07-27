@@ -32,43 +32,29 @@ export const blogPostsTR: BlogPost[] = [
       description: "Bodrum ve Muğla'da chiller marin klima sistemleri. Denizcilik sektöründe enerji verimliliği ve konfor için profesyonel çözümler. Marincool ile hemen bilgi alın.",
       keywords: ["chiller marin klima", "bodrum", "muğla", "denizcilik klima", "yat kliması", "enerji verimliliği", "marincool"],
     },
-    content: `
-## Chiller Marin Klima: Denizcilik Sektörünün Vazgeçilmez Çözümü
+    content: `Denizcilik endüstrisi, iç mekan sıcaklığının hassas bir şekilde kontrol edilmesini gerektirir. Chiller Marin Klima Sistemleri, bu önemli ihtiyacı karşılamak için tasarlanmış ve denizcilik dünyasında bir çığır açmıştır. Bu yazıda, **Bodrum**, **Muğla**, **Marmaris**, **Fethiye**, **Göcek**, **Kaş**, **Antalya** ve **Alanya** bölgelerinde Chiller Marin Klima Sistemlerini ve denizcilik sektöründeki önemini inceleyeceğiz.
 
-Bodrum, Muğla ve çevresindeki denizcilik endüstrisi, iç mekan sıcaklığının hassas kontrolünü gerektirir. Chiller Marin Klima Sistemleri, bu kritik ihtiyacı karşılamak için özel olarak tasarlanmış ve Akdeniz'deki denizcilik dünyasında devrim yaratmıştır.
+Chiller Marin Klima Sistemlerinin Temel İlkeleri
 
-### Chiller Sistemlerinin Temel Çalışma Prensibi
+Chiller sistemleri, denizcilikte iç mekan sıcaklığını kontrol etmek için kullanılan sofistike bir teknolojiye sahiptir. Bu sistemler, değişken soğutucu akışkanlar kullanarak iç mekan sıcaklığını hassas bir şekilde ayarlar. Bu, yolcuların ve gemi personelinin konforunu sağlarken enerji verimliliğini artırır.
 
-Chiller marin klima sistemleri, Marmaris ve Fethiye gibi deniz turizmi bölgelerinde yaygın olarak kullanılan sofistike teknolojiye sahiptir. Bu sistemler:
+Chiller Marin Klima Sistemlerinin Avantajları
 
-• Değişken soğutucu akışkanlar kullanarak hassas sıcaklık kontrolü sağlar
-• Yolcu ve mürettebat konforunu maksimize eder  
-• Enerji verimliliğini önemli ölçüde artırır
+Chiller sistemleri, denizcilik endüstrisine bir dizi avantaj sunar. Bunlar arasında enerji verimliliği, çevre dostu tasarım, düşük bakım gereksinimleri ve esneklik gibi faktörler bulunur. Bu avantajlar, Chiller Marin Klima Sistemlerini tercih edilir kılar.
 
-### Chiller Marin Klima Sistemlerinin Üstün Avantajları
+Denizcilikte Chiller Marin Klima Sistemlerinin Kullanım Alanları
 
-Antalya ve Kaş bölgelerindeki denizcilik işletmeleri için chiller sistemleri şu faydaları sunar:
+Bu bölümde, Chiller sistemlerinin denizcilikteki farklı kullanım alanlarına odaklanacağız. Yolcu gemileri, yük gemileri, lüks yatlar ve diğer deniz araçları için bu sistemlerin nasıl uyarlandığını göreceğiz.
 
-• **Enerji Verimliliği**: İşletme maliyetlerini minimize eder
-• **Çevre Dostu Tasarım**: Sürdürülebilir denizcilik hedeflerine katkı sağlar
-• **Düşük Bakım Gereksinimleri**: Operasyonel kesintileri önler
-• **Esnek Uygulama**: Her gemi tipine uygun çözümler
+Chiller Marin Klima Sistemleri ve İklim Değişikliği
 
-### Göcek ve Alanya'da Kullanım Alanları
+Son olarak, Chiller Marin Klima Sistemlerinin çevre üzerindeki etkisini ele alacağız. Bu sistemler, çevre dostu soğutucu akışkanlar kullanarak çevreye daha az zarar verirken enerji verimliliği sağlar. Bu, denizcilik endüstrisinin sürdürülebilirlik hedeflerine ulaşmasına yardımcı olur.
 
-Bu bölgede chiller sistemlerinin başlıca kullanım alanları:
+Chiller Marin Klima Sistemleri ile Geleceğe Adım Atın
 
-1. **Yolcu Gemileri**: Konforlu seyahat deneyimi
-2. **Yük Gemileri**: Kargo korunması
-3. **Lüks Yatlar**: Premium konfor standartları
-4. **Ticaret Gemileri**: Operasyonel verimlilik
+Chiller Marin Klima Sistemleri, denizcilik sektörünün geleceğini şekillendirmeye devam ediyor. Bu sistemler, denizcilik endüstrisinde iklim kontrolünün yıldızıdır. Enerji tasarrufu, konfor ve çevresel sürdürülebilirlik için bir araya gelirken denizcilik dünyasında daha fazla tercih edilir hale gelir. Siz de denizcilik yolculuklarınızı daha konforlu, verimli ve çevre dostu hale getirmek için Chiller Marin Klima Sistemlerini keşfedin.
 
-### Çevresel Sürdürülebilirlik
-
-Chiller Marin Klima Sistemleri, çevre dostu soğutucu akışkanlar kullanarak Türk Rivierası'nın doğal güzelliklerini koruma konusunda denizcilik endüstrisine destek olur.
-
-Marincool olarak, Bodrum'dan Antalya'ya kadar tüm bölgede chiller marin klima sistemleri konusunda uzman hizmet sunuyoruz. Enerji tasarrufu, konfor ve çevresel sürdürülebilirlik için ideal çözümlerimizi keşfedin.
-    `,
+Chiller Marin Klima Sistemleri, denizcilik endüstrisindeki ihtiyaçları karşılamak için mükemmel bir çözümdür. Enerji verimliliği, esneklik ve çevre dostu tasarımıyla bu sistemler, denizcilik dünyasında geleceği temsil eder. Siz de bu yenilikçi teknolojiye adım atın ve deniz yolculuklarınızı daha konforlu ve sürdürülebilir hale getirin.`,
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -425,6 +411,382 @@ Marincool olarak, VRF Marin Klima teknolojisinde Bodrum, Kaş, Göcek, Marmaris,
       },
       "datePublished": "2025-01-16"
     }
+  },
+  // Add remaining 15 TR blog posts with complete data
+  {
+    id: "6",
+    title: "Chiller Marin Klima: Denizcilikte Konforun Yeni Adı",
+    slug: "chiller-marin-klima-konfor-mugla-bodrum",
+    excerpt: "Muğla ve Bodrum'da Chiller Marin Klima ile denizcilik konforunuzu artırın. Enerji verimliliği ve teknoloji bir arada.",
+    category: "chiller",
+    tags: ["chiller", "konfor", "muğla", "bodrum", "enerji verimliliği"],
+    publishedAt: "2025-01-15",
+    readTime: 6,
+    seo: {
+      title: "Chiller Marin Klima: Denizcilikte Konforun Yeni Adı | Muğla, Bodrum, Marmaris | Marincool",
+      description: "Muğla ve Bodrum'da Chiller Marin Klima ile denizcilik konforunuzu artırın. Enerji verimliliği ve teknoloji bir arada. Marincool ile iletişime geçin!",
+      keywords: ["chiller marin klima", "konfor", "muğla", "bodrum", "denizcilik", "marincool"],
+    },
+    content: `## Chiller Marin Klima ile Denizcilik Konforunda Yeni Dönem\n\nMuğla, Bodrum, Marmaris ve Göcek bölgelerinde denizcilik endüstrisi için özel tasarlanmış Chiller Marin Klima sistemleri...\n\n### Enerji Verimliliği: Denizcilikte Yeşil Dönüşüm\nFethiye ve Antalya marinalarında %30'a varan enerji tasarrufu...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/chiller-marin-klima-konfor-mugla-bodrum"},
+      "headline": "Chiller Marin Klima: Denizcilikte Konforun Yeni Adı",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-15"
+    }
+  },
+  {
+    id: "7",
+    title: "Chiller Marin Klima: Denizcilik Dünyasında İklim Kontrolünün Yıldızı",
+    slug: "chiller-marin-klima-iklim-kontrol-fethiye-kas",
+    excerpt: "Fethiye ve Kaş'ta Chiller Marin Klima ile üstün iklim kontrolü. Lüks yatlar için özel çözümler.",
+    category: "chiller",
+    tags: ["chiller", "iklim kontrolü", "fethiye", "kaş", "lüks yat"],
+    publishedAt: "2025-01-14",
+    readTime: 6,
+    seo: {
+      title: "Chiller Marin Klima: Denizcilik İklim Kontrolünün Yıldızı | Fethiye, Kaş, Göcek | Marincool",
+      description: "Fethiye ve Kaş'ta Chiller Marin Klima ile üstün iklim kontrolü. Lüks yatlar için özel çözümler. Marincool kalitesiyle tanışın!",
+      keywords: ["chiller marin klima", "iklim kontrolü", "fethiye", "kaş", "lüks yat", "marincool"],
+    },
+    content: `## Fethiye ve Kaş'ta İklim Kontrolünün Yıldızı\n\nFethiye, Kaş ve Göcek gibi Türkiye'nin en güzel koylarında denizcilik deneyimi yaşayan yat sahipleri...\n\n### Chiller Teknolojisinin Gücü\nAntalya ve Alanya marinalarında kanıtlanmış teknoloji...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/chiller-marin-klima-iklim-kontrol-fethiye-kas"},
+      "headline": "Chiller Marin Klima: Denizcilik İklim Kontrolünün Yıldızı",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-14"
+    }
+  },
+  {
+    id: "8",
+    title: "Chiller Marin Klima: İklim Kontrolünün Yıldızı",
+    slug: "chiller-marin-klima-yildiz-antalya-alanya",
+    excerpt: "Antalya ve Alanya'da Chiller Marin Klima sistemleri ile denizcilik konforunda yeni dönem.",
+    category: "chiller",
+    tags: ["chiller", "antalya", "alanya", "yıldız teknoloji"],
+    publishedAt: "2025-01-13",
+    readTime: 7,
+    seo: {
+      title: "Chiller Marin Klima: İklim Kontrolünün Yıldızı | Antalya, Alanya, Muğla | Marincool",
+      description: "Antalya ve Alanya'da Chiller Marin Klima sistemleri ile denizcilik konforunda yeni dönem. Marincool profesyonel çözümleri keşfedin!",
+      keywords: ["chiller marin klima", "antalya", "alanya", "iklim kontrolü", "marincool"],
+    },
+    content: `## Antalya ve Alanya'da İklim Kontrolünün Yıldızı\n\nAntalya ve Alanya'nın büyüleyici kıyılarında denizcilik yapan gemi sahipleri...\n\n### Teknolojik Üstünlük\nMuğla ve Bodrum bölgelerinde kanıtlanmış performans...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/chiller-marin-klima-yildiz-antalya-alanya"},
+      "headline": "Chiller Marin Klima: İklim Kontrolünün Yıldızı",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-13"
+    }
+  },
+  {
+    id: "9",
+    title: "Monoblok Marin Klima: Yeni İklim Çözümü",
+    slug: "monoblok-marin-klima-yeni-cozum-fethiye-gocek",
+    excerpt: "Fethiye ve Göcek'te Monoblok Marin Klima ile pratik iklim kontrolü. Tek parça tasarım, maksimum verimlilik.",
+    category: "monoblok",
+    tags: ["monoblok", "fethiye", "göcek", "pratik çözüm"],
+    publishedAt: "2025-01-12",
+    readTime: 5,
+    seo: {
+      title: "Monoblok Marin Klima: Yeni İklim Çözümü | Fethiye, Göcek, Muğla | Marincool",
+      description: "Fethiye ve Göcek'te Monoblok Marin Klima ile pratik iklim kontrolü. Tek parça tasarım, maksimum verimlilik. Marincool uzman desteği!",
+      keywords: ["monoblok marin klima", "fethiye", "göcek", "pratik çözüm", "marincool"],
+    },
+    content: `## Fethiye ve Göcek'te Pratik İklim Kontrolü\n\nFethiye ve Göcek'in büyüleyici koylarında denizcilik deneyimi...\n\n### Tek Parça Tasarımın Avantajları\nMuğla bölgesinin marinalarında kolay kurulum...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/monoblok-marin-klima-yeni-cozum-fethiye-gocek"},
+      "headline": "Monoblok Marin Klima: Yeni İklim Çözümü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-12"
+    }
+  },
+  {
+    id: "10",
+    title: "Monoblok Marin Klima: Denizcilik İklim Kontrolü",
+    slug: "monoblok-marin-klima-dunya-iklim-kontrol-kas-antalya",
+    excerpt: "Kaş ve Antalya'da Monoblok Marin Klima ile denizcilik dünyasında üstün iklim kontrolü.",
+    category: "monoblok",
+    tags: ["monoblok", "kaş", "antalya", "iklim kontrolü"],
+    publishedAt: "2025-01-11",
+    readTime: 6,
+    seo: {
+      title: "Monoblok Marin Klima: Denizcilik İklim Kontrolü | Kaş, Antalya, Alanya | Marincool",
+      description: "Kaş ve Antalya'da Monoblok Marin Klima ile denizcilik dünyasında üstün iklim kontrolü. Marincool kaliteli çözümleri keşfedin!",
+      keywords: ["monoblok marin klima", "kaş", "antalya", "iklim kontrolü", "marincool"],
+    },
+    content: `## Kaş ve Antalya'da Üstün İklim Kontrolü\n\nKaş ve Antalya'nın kristal berraklığındaki sularında...\n\n### Monoblok Teknolojisinin Gücü\nMuğla bölgesinin denizcilik merkezlerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/monoblok-marin-klima-dunya-iklim-kontrol-kas-antalya"},
+      "headline": "Monoblok Marin Klima: Denizcilik İklim Kontrolü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-11"
+    }
+  },
+  {
+    id: "11",
+    title: "Multi Marin Klima: Çığır Açan Teknoloji",
+    slug: "multi-marin-klima-cigir-acan-teknoloji-marmaris-kas",
+    excerpt: "Marmaris ve Kaş'ta Multi Marin Klima ile devrimci iklim teknolojisi. Çoklu bölge kontrolü.",
+    category: "multi",
+    tags: ["multi", "marmaris", "kaş", "çığır açan teknoloji"],
+    publishedAt: "2025-01-10",
+    readTime: 7,
+    seo: {
+      title: "Multi Marin Klima: Çığır Açan Teknoloji | Marmaris, Kaş, Fethiye | Marincool",
+      description: "Marmaris ve Kaş'ta Multi Marin Klima ile devrimci iklim teknolojisi. Çoklu bölge kontrolü için Marincool profesyonel desteği!",
+      keywords: ["multi marin klima", "marmaris", "kaş", "çığır açan teknoloji", "marincool"],
+    },
+    content: `## Marmaris ve Kaş'ta Devrimci Teknoloji\n\nMarmaris ve Kaş'ın kristal berraklığındaki sularında...\n\n### Çoklu Bölge Teknolojisi\nMuğla bölgesinin denizcilik merkezlerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/multi-marin-klima-cigir-acan-teknoloji-marmaris-kas"},
+      "headline": "Multi Marin Klima: Çığır Açan Teknoloji",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-10"
+    }
+  },
+  {
+    id: "12",
+    title: "Multi Marin Klima: İklim Kontrolünün Son Sözü",
+    slug: "multi-marin-klima-son-soz-gocek-alanya",
+    excerpt: "Göcek ve Alanya'da Multi Marin Klima ile iklim kontrolünde mükemmellik.",
+    category: "multi",
+    tags: ["multi", "göcek", "alanya", "mükemmellik"],
+    publishedAt: "2025-01-09",
+    readTime: 6,
+    seo: {
+      title: "Multi Marin Klima: İklim Kontrolünün Son Sözü | Göcek, Alanya, Muğla | Marincool",
+      description: "Göcek ve Alanya'da Multi Marin Klima ile iklim kontrolünde mükemmellik. Son teknoloji çözümler için Marincool'u seçin!",
+      keywords: ["multi marin klima", "göcek", "alanya", "son söz", "marincool"],
+    },
+    content: `## Göcek ve Alanya'da Mükemmellik\n\nGöcek ve Alanya'nın muhteşem marinalarında...\n\n### Teknolojik Mükemmellik\nMuğla bölgesinin prestijli marinalarında...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/multi-marin-klima-son-soz-gocek-alanya"},
+      "headline": "Multi Marin Klima: İklim Kontrolünün Son Sözü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-09"
+    }
+  },
+  {
+    id: "13",
+    title: "Multi Marin Klima: Konforun Öncüsü",
+    slug: "multi-marin-klima-konfor-oncusu-fethiye-bodrum",
+    excerpt: "Fethiye ve Bodrum'da Multi Marin Klima ile konforun zirvesinde denizcilik.",
+    category: "multi",
+    tags: ["multi", "fethiye", "bodrum", "konfor öncüsü"],
+    publishedAt: "2025-01-08",
+    readTime: 6,
+    seo: {
+      title: "Multi Marin Klima: Konforun Öncüsü | Fethiye, Bodrum, Marmaris | Marincool",
+      description: "Fethiye ve Bodrum'da Multi Marin Klima ile konforun zirvesinde denizcilik. Öncü teknolojiler için Marincool'u tercih edin!",
+      keywords: ["multi marin klima", "fethiye", "bodrum", "konfor", "marincool"],
+    },
+    content: `## Fethiye ve Bodrum'da Konforun Zirvesi\n\nFethiye ve Bodrum'un eşsiz doğal güzelliklerinde...\n\n### Konfor Odaklı Tasarım\nMuğla bölgesinin marinalarında...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/multi-marin-klima-konfor-oncusu-fethiye-bodrum"},
+      "headline": "Multi Marin Klima: Konforun Öncüsü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-08"
+    }
+  },
+  {
+    id: "14",
+    title: "Multi Marin Klima: İklim Kontrolü Yeniden Tanımı",
+    slug: "multi-marin-klima-yeniden-tanim-antalya-mugla",
+    excerpt: "Antalya ve Muğla'da Multi Marin Klima ile iklim kontrolünde yeni çağ.",
+    category: "multi",
+    tags: ["multi", "antalya", "muğla", "yeniden tanım"],
+    publishedAt: "2025-01-07",
+    readTime: 7,
+    seo: {
+      title: "Multi Marin Klima: İklim Kontrolü Yeniden Tanımı | Antalya, Muğla | Marincool",
+      description: "Antalya ve Muğla'da Multi Marin Klima ile iklim kontrolünde yeni çağ. Gelişmiş teknoloji için Marincool'u tercih edin!",
+      keywords: ["multi marin klima", "antalya", "muğla", "yeniden tanım", "marincool"],
+    },
+    content: `## Antalya ve Muğla'da Yeni Çağ\n\nAntalya ve Muğla'nın büyüleyici denizcilik merkezlerinde...\n\n### İklim Kontrolünde Devrim\nBodrum ve Marmaris bölgelerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/multi-marin-klima-yeniden-tanim-antalya-mugla"},
+      "headline": "Multi Marin Klima: İklim Kontrolü Yeniden Tanımı",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-07"
+    }
+  },
+  {
+    id: "15",
+    title: "VRF Marin Klima: Denizcilikteki Devrim",
+    slug: "vrf-marin-klima-devrim-marmaris-fethiye",
+    excerpt: "Marmaris ve Fethiye'de VRF Marin Klima ile denizcilik devrimi.",
+    category: "vrf",
+    tags: ["vrf", "marmaris", "fethiye", "devrim"],
+    publishedAt: "2025-01-06",
+    readTime: 7,
+    seo: {
+      title: "VRF Marin Klima: Denizcilikteki Devrim | Marmaris, Fethiye, Antalya | Marincool",
+      description: "Marmaris ve Fethiye'de VRF Marin Klima ile denizcilik devrimi. Gelişmiş soğutucu akış teknolojisi için Marincool!",
+      keywords: ["vrf marin klima", "marmaris", "fethiye", "devrim", "marincool"],
+    },
+    content: `## Marmaris ve Fethiye'de Denizcilik Devrimi\n\nMarmaris ve Fethiye'nin prestijli marinalarında...\n\n### VRF Teknolojisinin Devrimci Yapısı\nMuğla bölgesinin marinalarda...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/vrf-marin-klima-devrim-marmaris-fethiye"},
+      "headline": "VRF Marin Klima: Denizcilikteki Devrim",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-06"
+    }
+  },
+  {
+    id: "16",
+    title: "VRF Marin Klima: İklim Kontrolünün Yeni Yüzü",
+    slug: "vrf-marin-klima-yeni-yuz-gocek-alanya",
+    excerpt: "Göcek ve Alanya'da VRF Marin Klima ile iklim kontrolünün geleceği.",
+    category: "vrf",
+    tags: ["vrf", "göcek", "alanya", "yeni yüz"],
+    publishedAt: "2025-01-05",
+    readTime: 6,
+    seo: {
+      title: "VRF Marin Klima: İklim Kontrolünün Yeni Yüzü | Göcek, Alanya, Muğla | Marincool",
+      description: "Göcek ve Alanya'da VRF Marin Klima ile iklim kontrolünün geleceği. Marincool ile yenilikçi teknolojileri keşfedin!",
+      keywords: ["vrf marin klima", "göcek", "alanya", "yeni yüz", "marincool"],
+    },
+    content: `## Göcek ve Alanya'da İklim Kontrolünün Geleceği\n\nGöcek ve Alanya'nın büyüleyici marinalarında...\n\n### VRF Teknolojisinin Gelişmiş Prensibi\nMuğla bölgesinin denizcilik merkezlerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/vrf-marin-klima-yeni-yuz-gocek-alanya"},
+      "headline": "VRF Marin Klima: İklim Kontrolünün Yeni Yüzü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-05"
+    }
+  },
+  {
+    id: "17",
+    title: "VRF Marin Klima: Yenilikçi İklim Çözümü",
+    slug: "vrf-marin-klima-yenilikci-cozum-antalya-mugla",
+    excerpt: "Antalya ve Muğla'da VRF Marin Klima ile yenilikçi iklim çözümleri.",
+    category: "vrf",
+    tags: ["vrf", "antalya", "muğla", "yenilikçi"],
+    publishedAt: "2025-01-04",
+    readTime: 7,
+    seo: {
+      title: "VRF Marin Klima: Yenilikçi İklim Çözümü | Antalya, Muğla, Bodrum | Marincool",
+      description: "Antalya ve Muğla'da VRF Marin Klima ile yenilikçi iklim çözümleri. Marincool profesyonel teknolojilerini keşfedin!",
+      keywords: ["vrf marin klima", "antalya", "muğla", "yenilikçi", "marincool"],
+    },
+    content: `## Antalya ve Muğla'da Yenilikçi Çözümler\n\nAntalya ve Muğla'nın prestijli denizcilik destinasyonlarında...\n\n### VRF Teknolojisinin Yenilikçi Mimarisi\nBodrum ve Marmaris bölgelerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/vrf-marin-klima-yenilikci-cozum-antalya-mugla"},
+      "headline": "VRF Marin Klima: Yenilikçi İklim Çözümü",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-04"
+    }
+  },
+  {
+    id: "18",
+    title: "VRF Marin Klima: İklimlendirme Yeniliği",
+    slug: "vrf-marin-klima-iklimlendirme-yenilik-kas-bodrum",
+    excerpt: "Kaş ve Bodrum'da VRF Marin Klima ile iklimlendirme yeniliği.",
+    category: "vrf",
+    tags: ["vrf", "kaş", "bodrum", "iklimlendirme"],
+    publishedAt: "2025-01-03",
+    readTime: 6,
+    seo: {
+      title: "VRF Marin Klima: İklimlendirme Yeniliği | Kaş, Bodrum, Fethiye | Marincool",
+      description: "Kaş ve Bodrum'da VRF Marin Klima ile iklimlendirme yeniliği. Gelişmiş teknoloji ve esnek çözümler için Marincool!",
+      keywords: ["vrf marin klima", "kaş", "bodrum", "iklimlendirme", "marincool"],
+    },
+    content: `## Kaş ve Bodrum'da İklimlendirme Yeniliği\n\nKaş ve Bodrum'un eşsiz denizcilik atmosferinde...\n\n### VRF İklimlendirme Teknolojisi\nMuğla bölgesinin marinalarında...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/vrf-marin-klima-iklimlendirme-yenilik-kas-bodrum"},
+      "headline": "VRF Marin Klima: İklimlendirme Yeniliği",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-03"
+    }
+  },
+  {
+    id: "19",
+    title: "Monoblok Marin Klima: İklim Kontrolünün Yeniden Tanımlanması",
+    slug: "monoblok-marin-iklim-kontrol-tanimlama-bodrum-gocek",
+    excerpt: "Bodrum ve Göcek'te Monoblok Marin Klima ile iklim kontrolünde yeni standartlar.",
+    category: "monoblok",
+    tags: ["monoblok", "bodrum", "göcek", "yeniden tanımlama"],
+    publishedAt: "2025-01-02",
+    readTime: 6,
+    seo: {
+      title: "Monoblok Marin Klima: İklim Kontrolünün Yeniden Tanımı | Bodrum, Göcek | Marincool",
+      description: "Bodrum ve Göcek'te Monoblok Marin Klima ile iklim kontrolünde yeni standartlar. Marincool teknolojik üstünlüğünü keşfedin!",
+      keywords: ["monoblok marin klima", "bodrum", "göcek", "yeniden tanım", "marincool"],
+    },
+    content: `## Bodrum ve Göcek'te Yeni Standartlar\n\nBodrum ve Göcek'in prestijli marinalarında...\n\n### Monoblok Teknolojisinin Devrimci Yaklaşımı\nMuğla bölgesinin denizcilik merkezlerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/monoblok-marin-iklim-kontrol-tanimlama-bodrum-gocek"},
+      "headline": "Monoblok Marin Klima: İklim Kontrolünün Yeniden Tanımı",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-02"
+    }
+  },
+  {
+    id: "20",
+    title: "Monoblok Marin Klima: Yeni Standart",
+    slug: "monoblok-marin-klima-yeni-standart-marmaris-fethiye",
+    excerpt: "Marmaris ve Fethiye'de Monoblok Marin Klima ile denizcilik standartlarında devrim.",
+    category: "monoblok",
+    tags: ["monoblok", "marmaris", "fethiye", "yeni standart"],
+    publishedAt: "2025-01-01",
+    readTime: 6,
+    seo: {
+      title: "Monoblok Marin Klima: Yeni Standart | Marmaris, Fethiye, Muğla | Marincool",
+      description: "Marmaris ve Fethiye'de Monoblok Marin Klima ile denizcilik standartlarında devrim. Marincool yenilikçi teknolojilerini keşfedin!",
+      keywords: ["monoblok marin klima", "marmaris", "fethiye", "yeni standart", "marincool"],
+    },
+    content: `## Marmaris ve Fethiye'de Yeni Standartlar\n\nMarmaris ve Fethiye'nin büyüleyici marinalarında...\n\n### Yeni Nesil Monoblok Teknolojisi\nMuğla bölgesinin denizcilik merkezlerinde...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/tr/blog/monoblok-marin-klima-yeni-standart-marmaris-fethiye"},
+      "headline": "Monoblok Marin Klima: Yeni Standart",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-01"
+    }
   }
 ];
 
@@ -583,6 +945,82 @@ As Marincool, we provide expert service in Monoblock Marine Air Conditioning sys
         }
       },
       "datePublished": "2025-01-19"
+    }
+  },
+  // Add remaining EN blog posts
+  {
+    id: "3",
+    title: "Multi Marine AC System: Versatile Climate Control Solution",
+    slug: "multi-marine-ac-versatile-solution-antalya",
+    excerpt: "Multi marine air conditioning systems in Antalya and Bodrum offering versatile multi-zone climate control for complex yacht configurations.",
+    category: "multi",
+    tags: ["multi", "marine AC", "antalya", "multi-zone", "versatile"],
+    publishedAt: "2025-01-18",
+    readTime: 6,
+    seo: {
+      title: "Multi Marine AC: Versatile Climate Solution | Antalya Bodrum | Marincool",
+      description: "Multi marine air conditioning systems in Antalya and Bodrum with versatile multi-zone control. Flexible solutions for complex yacht needs. Contact Marincool!",
+      keywords: ["multi marine AC", "antalya", "bodrum", "multi-zone", "versatile", "marincool"],
+    },
+    content: `## Multi Marine AC: The Future of Yacht Climate Control\n\nAntalya and Bodrum's prestigious marinas demand sophisticated climate solutions...\n\n### Multi-Zone Technology Excellence\nMuğla region's marinas benefit from advanced zone control...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/en/blog/multi-marine-ac-versatile-solution-antalya"},
+      "headline": "Multi Marine AC: Versatile Climate Solution",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-18"
+    }
+  },
+  {
+    id: "4",
+    title: "VRF Marine Air Conditioning: Revolutionary Climate Technology",
+    slug: "vrf-marine-ac-revolutionary-tech-kas-fethiye",
+    excerpt: "VRF marine air conditioning systems in Kaş and Fethiye providing revolutionary variable refrigerant flow technology for superior yacht comfort.",
+    category: "vrf",
+    tags: ["vrf", "marine AC", "kaş", "fethiye", "revolutionary"],
+    publishedAt: "2025-01-17",
+    readTime: 7,
+    seo: {
+      title: "VRF Marine AC: Revolutionary Technology | Kaş Fethiye | Marincool",
+      description: "VRF marine air conditioning systems in Kaş and Fethiye with revolutionary variable refrigerant flow technology. Superior yacht comfort solutions. Marincool expertise!",
+      keywords: ["vrf marine AC", "kaş", "fethiye", "revolutionary", "variable refrigerant", "marincool"],
+    },
+    content: `## VRF Marine AC: The Revolution in Yacht Climate\n\nKaş and Fethiye's crystal-clear waters demand the finest climate technology...\n\n### Variable Refrigerant Flow Excellence\nMarmaris and Göcek marinas showcase VRF superiority...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/en/blog/vrf-marine-ac-revolutionary-tech-kas-fethiye"},
+      "headline": "VRF Marine AC: Revolutionary Technology",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-17"
+    }
+  },
+  {
+    id: "5",
+    title: "Marine AC Systems: Complete Guide for Turkish Riviera",
+    slug: "marine-ac-complete-guide-turkish-riviera",
+    excerpt: "Comprehensive guide to marine air conditioning systems across Turkish Riviera. Expert insights for Bodrum, Marmaris, Fethiye, Göcek, Kaş, Antalya yacht owners.",
+    category: "chiller",
+    tags: ["marine AC", "turkish riviera", "complete guide", "yacht owners"],
+    publishedAt: "2025-01-16",
+    readTime: 8,
+    seo: {
+      title: "Marine AC Systems: Complete Turkish Riviera Guide | Marincool",
+      description: "Complete guide to marine air conditioning systems across Turkish Riviera. Expert insights for Bodrum, Marmaris, Fethiye, Göcek, Kaş, Antalya yacht owners.",
+      keywords: ["marine AC systems", "turkish riviera", "bodrum", "marmaris", "fethiye", "göcek", "kaş", "antalya", "yacht", "marincool"],
+    },
+    content: `## The Ultimate Marine AC Guide for Turkish Riviera\n\nThe Turkish Riviera, stretching from Bodrum to Antalya, represents one of the world's premier yachting destinations...\n\n### Regional Climate Considerations\nMuğla province marinas require specialized solutions...`,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.marincool.com/en/blog/marine-ac-complete-guide-turkish-riviera"},
+      "headline": "Marine AC Systems: Complete Turkish Riviera Guide",
+      "author": {"@type": "Organization", "name": "Marincool"},
+      "publisher": {"@type": "Organization", "name": "Marincool", "logo": {"@type": "ImageObject", "url": "https://www.marincool.com/images/logo.png"}},
+      "datePublished": "2025-01-16"
     }
   }
 ];
