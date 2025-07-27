@@ -9,7 +9,7 @@ interface Product {
   shortDesc: string;
   fullDescription: string;
   features: string[];
-  specifications: { [key: string]: string };
+  specifications: { [key: string]: string | undefined };
   idealFor: string;
   icon: React.ComponentType<{ className?: string }>;
   color: string;
@@ -89,7 +89,9 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
               <div>
                 <h4 className="text-lg font-bold text-primary-navy mb-4">Teknik Bilgiler</h4>
                 <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-                  {Object.entries(product.specifications).map(([key, value], index) => (
+                  {Object.entries(product.specifications)
+                    .filter(([key, value]) => value !== undefined)
+                    .map(([key, value], index) => (
                     <div key={index} className="flex justify-between text-sm">
                       <span className="font-medium text-gray-700">
                         {key === 'capacity' ? 'Kapasite' : 
