@@ -19,9 +19,24 @@ interface ProductModalProps {
   product: Product | null;
   isOpen: boolean;
   onClose: () => void;
+  lang?: "tr" | "en";
 }
 
-export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
+const content = {
+  tr: {
+    features: "Özellikler",
+    technicalInfo: "Teknik Bilgiler",
+    close: "Kapat"
+  },
+  en: {
+    features: "Features", 
+    technicalInfo: "Technical Information",
+    close: "Close"
+  }
+};
+
+export default function ProductModal({ product, isOpen, onClose, lang = "tr" }: ProductModalProps) {
+  const t = content[lang];
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -74,7 +89,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Features */}
               <div>
-                <h4 className="text-lg font-bold text-primary-navy mb-4">Özellikler</h4>
+                <h4 className="text-lg font-bold text-primary-navy mb-4">{t.features}</h4>
                 <ul className="space-y-3">
                   {product.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
@@ -87,7 +102,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
 
               {/* Specs */}
               <div>
-                <h4 className="text-lg font-bold text-primary-navy mb-4">Teknik Bilgiler</h4>
+                <h4 className="text-lg font-bold text-primary-navy mb-4">{t.technicalInfo}</h4>
                 <div className="bg-gray-50 rounded-lg p-4 space-y-3">
                   {Object.entries(product.specifications)
                     .filter(([key, value]) => value !== undefined)
@@ -131,7 +146,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                   onClick={onClose}
                   className="inline-flex items-center justify-center px-6 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors"
                 >
-                  Kapat
+                  {t.close}
                 </button>
               </div>
             </div>

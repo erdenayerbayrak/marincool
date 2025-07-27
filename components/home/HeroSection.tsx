@@ -40,8 +40,6 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           preload="auto"
         >
           <source src="/videos/herovideo.mp4" type="video/mp4" />
-          {/* Mobil için optimize edilmiş video */}
-          <source src="/videos/herovideo-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/70 to-primary-blue/50" />
       </div>
@@ -79,7 +77,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             {t.cta1}
           </a>
           <Link
-            href={`/${lang}/urunlerimiz`}
+            href={lang === 'tr' ? '/tr/urunlerimiz' : '/en/products'}
             className="btn btn-secondary min-h-[48px] px-8 py-4 text-center"
             style={{ touchAction: 'manipulation' }}
           >
