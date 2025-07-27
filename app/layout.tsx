@@ -72,7 +72,6 @@ export default function RootLayout({
         
         {/* Preload critical images */}
         <link rel="preload" as="image" href="/images/marincool-logo.png" />
-        <link rel="preload" as="image" href="/images/anasayfa1.jpg" />
       </body>
     </html>
   );

@@ -36,7 +36,6 @@ export default function AboutSection({ lang }: AboutSectionProps) {
           fill
           sizes="100vw"
           className="object-cover object-bottom"
-          priority
         />
       </div>
 

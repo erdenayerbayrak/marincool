@@ -213,6 +213,7 @@ export default function AboutPage() {
                 src="/images/yat2.jpg"
                 alt="Marincool Şirket"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </motion.div>
@@ -272,6 +273,7 @@ export default function AboutPage() {
             src="/images/yat5.jpg"
             alt="Yacht Background"
             fill
+            sizes="100vw"
             className="object-cover"
           />
         </div>
@@ -369,6 +371,7 @@ export default function AboutPage() {
                 src="/images/yat1.jpg"
                 alt="Marincool Ekibi"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </motion.div>

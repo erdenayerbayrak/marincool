@@ -42,6 +42,7 @@ export default function WhyMarincool({ lang }: WhyMarincoolProps) {
           src="/images/yat5.jpg"
           alt="Yacht Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>
@@ -63,6 +64,7 @@ export default function WhyMarincool({ lang }: WhyMarincoolProps) {
                     src="/images/team-photo.jpeg"
                     alt="Marincool Team"
                     fill
+                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 384px"
                     className="object-contain bg-gray-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 to-transparent" />

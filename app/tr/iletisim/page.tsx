@@ -209,6 +209,7 @@ export default function ContactPage() {
             src="/images/yat3.jpg"
             alt="Yacht Background"
             fill
+            sizes="100vw"
             className="object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-white/70"></div>
