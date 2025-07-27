@@ -67,20 +67,18 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
           className,
         )}
       >
-        <div className="px-3 sm:px-4">
+        <div className="mx-auto max-w-7xl px-3 sm:px-4">
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Mobile Logo - Ultra Compact */}
             <Link href={`/${lang}`} className="flex items-center flex-shrink-0 lg:hidden">
-              <div className="bg-primary-navy rounded px-1.5 py-0.5 flex items-center justify-center">
-                <Image
-                  src="/images/logo.png"
-                  alt="Marincool"
-                  width={60}
-                  height={14}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/marincool-logo.png"
+                alt="Marincool"
+                width={80}
+                height={32}
+                className="object-contain h-8"
+                priority
+              />
             </Link>
 
             {/* Desktop Logo */}
@@ -252,13 +250,7 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden"
-              style={{ 
-                maxWidth: '85vw',
-                width: '320px',
-                overflowX: 'hidden',
-                overflowY: 'auto'
-              }}
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85%] bg-white shadow-2xl z-50 lg:hidden overflow-y-auto"
             >
               <div className="flex flex-col h-full">
                 {/* Header */}

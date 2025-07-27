@@ -39,7 +39,7 @@ export default function Footer({ lang }: FooterProps) {
   const t = content[lang];
 
   return (
-    <footer className="relative bg-primary-navy text-white" style={{ overflowX: 'hidden', overflowY: 'hidden', width: '100vw', maxWidth: '100vw' }}>
+    <footer className="relative bg-primary-navy text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

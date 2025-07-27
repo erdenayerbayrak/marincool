@@ -11,30 +11,27 @@ export default function SplashPage() {
   };
 
   return (
-    <div className="relative h-screen" style={{ width: '100vw', maxWidth: '100vw', overflowX: 'hidden', overflowY: 'hidden' }}>
+    <div className="fixed inset-0 w-full h-full overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0" style={{ width: '100vw', maxWidth: '100vw' }}>
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          style={{ width: '100vw', maxWidth: '100vw', height: '100vh' }}
-        >
-          <source src="/images/karşılamavideo.mp4" type="video/mp4" />
-          <source src="/videos/karşılamavideo3.mp4" type="video/mp4" />
-          {/* Mobil için optimize edilmiş video - fallback */}
-          <source src="/videos/herovideo.mp4" type="video/mp4" media="(max-width: 768px)" />
-        </video>
-      </div>
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src="/images/karşılamavideo.mp4" type="video/mp4" />
+        <source src="/videos/karşılamavideo3.mp4" type="video/mp4" />
+        {/* Mobil için optimize edilmiş video - fallback */}
+        <source src="/videos/herovideo.mp4" type="video/mp4" media="(max-width: 768px)" />
+      </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/30 z-10" />
 
       {/* Language Selection Buttons */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 z-10 px-6 sm:px-8">
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 z-20 px-4 sm:px-8">
         <motion.button
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +39,7 @@ export default function SplashPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleLanguageSelect("tr")}
-          className="w-80 max-w-[calc(100vw-3rem)] py-6 bg-primary-navy text-white text-xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-primary-navy/90 shadow-xl text-center min-h-[44px]"
+          className="w-72 max-w-[80vw] py-5 bg-primary-navy text-white text-xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-primary-navy/90 shadow-xl text-center"
           style={{ touchAction: 'manipulation' }}
         >
           TÜRKÇE
@@ -55,7 +52,7 @@ export default function SplashPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleLanguageSelect("en")}
-          className="w-80 max-w-[calc(100vw-3rem)] py-6 bg-white text-primary-navy text-xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-white/90 shadow-xl text-center min-h-[44px]"
+          className="w-72 max-w-[80vw] py-5 bg-white text-primary-navy text-xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-white/90 shadow-xl text-center"
           style={{ touchAction: 'manipulation' }}
         >
           ENGLISH

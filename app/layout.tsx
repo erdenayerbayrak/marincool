@@ -67,10 +67,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
-      <body className="antialiased overflow-x-hidden min-h-screen">
-        <div className="w-full overflow-x-hidden relative">
-          {children}
-        </div>
+      <body className="antialiased min-h-screen">
+        {children}
         
         {/* Preload critical images */}
         <link rel="preload" as="image" href="/images/marincool-logo.png" />

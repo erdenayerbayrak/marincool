@@ -28,9 +28,9 @@ export default function HeroSection({ lang }: HeroSectionProps) {
   const t = content[lang];
 
   return (
-    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center overflow-hidden w-full">
+    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0 w-full h-full">
+      <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
           autoPlay
