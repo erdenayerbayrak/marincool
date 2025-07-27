@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Marincool olarak VRF, Chiller ve Monoblok marin klima sistemleri ile yat sahiplerine profesyonel klima çözümleri sunuyoruz. Muğla merkezli uzman marin klima servisi.",
   keywords: "marin klima sistemleri, yat kliması, tekne klima servisi, Marincool, VRF marin klima, Chiller marin klima, Monoblok klima, Muğla marin klima",
   authors: [{ name: "Marincool" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   alternates: {
     canonical: "https://marincool.com",
@@ -67,8 +67,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
-      <body className="antialiased">
-        {children}
+      <body className="antialiased overflow-x-hidden">
+        <div className="w-full overflow-x-hidden">
+          {children}
+        </div>
         
         {/* Preload critical images */}
         <link rel="preload" as="image" href="/images/marincool-logo.png" />

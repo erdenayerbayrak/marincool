@@ -40,20 +40,20 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm",
+        "fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm w-full overflow-x-hidden",
         className,
       )}
     >
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <Link href={`/${lang}`} className="flex items-center">
-            <div className="relative w-24 sm:w-28 md:w-36 h-6 sm:h-8 md:h-10">
+          <Link href={`/${lang}`} className="flex items-center h-full py-2">
+            <div className="bg-primary-navy rounded-lg px-3 h-10 sm:h-12 flex items-center justify-center">
               <Image
                 src="/images/logo.png"
                 alt="Marincool Logo"
-                fill
-                sizes="(max-width: 640px) 112px, 144px"
+                width={120}
+                height={28}
                 className="object-contain"
                 priority
               />

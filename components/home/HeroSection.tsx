@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 interface HeroSectionProps {
   lang: "tr" | "en";
@@ -26,75 +24,27 @@ const content = {
   },
 };
 
-const heroImages = [
-  "/images/anasayfa1.jpg",
-  "/images/anasayfa2.jpg",
-  "/images/yat2.jpg",
-];
-
 export default function HeroSection({ lang }: HeroSectionProps) {
   const t = content[lang];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000); // 5 saniyede bir değişim
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-      {/* Decorative Yacht Image */}
-      <div className="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none z-0">
-        <Image
-          src="/images/yat6.jpg"
-          alt="Yacht Decorative"
-          fill
-          sizes="50vw"
-          className="object-cover object-left"
-        />
-      </div>
-      
-      {/* Background Images Slider */}
+    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {heroImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={image}
-              alt={`Marincool Hero ${index + 1}`}
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority={index === 0}
-              quality={90}
-            />
-          </div>
-        ))}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/images/hero-poster.jpg"
+        >
+          <source src="/videos/herovideo.mp4" type="video/mp4" />
+          {/* Mobil için optimize edilmiş video */}
+          <source src="/videos/herovideo-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/70 to-primary-blue/50" />
-      </div>
-
-      {/* Slider Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImageIndex 
-                ? "bg-white scale-125" 
-                : "bg-white/50 hover:bg-white/75"
-            }`}
-          />
-        ))}
       </div>
 
       {/* Content */}
@@ -104,12 +54,12 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 sm:mb-4">
             {t.title}
             <br />
             <span className="text-accent-green">{t.titleHighlight}</span>
           </h1>
-          <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto opacity-90">
+          <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 max-w-2xl mx-auto opacity-90 px-4 sm:px-0">
             {t.subtitle}
           </p>
         </motion.div>

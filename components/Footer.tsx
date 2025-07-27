@@ -56,12 +56,12 @@ export default function Footer({ lang }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="relative w-48 h-12 mb-4">
+            <div className="relative w-64 h-16 mb-4">
               <Image
                 src="/images/logo.png"
                 alt="Marincool Logo"
                 fill
-                sizes="150px"
+                sizes="256px"
                 className="object-contain"
               />
             </div>
