@@ -125,14 +125,14 @@ export default function AboutPage() {
     <>
       <Head>
         {/* Enhanced Meta Tags */}
-        <title>About Us - Turkey's Leading Marine Climate Expert | Marincool Muğla</title>
+        <title>About Us - Turkey&apos;s Leading Marine Climate Expert | Marincool Muğla</title>
         <meta name="description" content="15 years of experience in marine air conditioning since 2008. Muğla-based Marincool provides professional yacht solutions with VRF, Chiller and Monoblock systems." />
         <meta name="keywords" content="About Marincool, marine AC expert, yacht climate company, Muğla marine AC, experienced yacht service, marine climate history" />
         <link rel="canonical" href="https://marincool.com/en/about" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="About Us - Turkey's Leading Marine Climate Expert | Marincool" />
-        <meta property="og:description" content="15 years of experience as Turkey's most trusted marine air conditioning company. Serving all Turkey from Muğla." />
+        <meta property="og:title" content="About Us - Turkey&apos;s Leading Marine Climate Expert | Marincool" />
+        <meta property="og:description" content="15 years of experience as Turkey&apos;s most trusted marine air conditioning company. Serving all Turkey from Muğla." />
         <meta property="og:url" content="https://marincool.com/en/about" />
         <meta property="og:type" content="website" />
         

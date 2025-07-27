@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
 
 // Structured Data for Contact Page (English)
@@ -212,10 +213,11 @@ export default function ContactPage() {
       <section className="relative section-padding">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/yat3.jpg"
             alt="Yacht Background"
-            className="w-full h-full object-cover opacity-15"
+            fill
+            className="object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-white/70"></div>
         </div>

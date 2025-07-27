@@ -50,11 +50,11 @@ export default function WhyMarincool({ lang }: WhyMarincoolProps) {
             <div className="relative">
               <div className="relative bg-white p-3 rounded-2xl shadow-lg max-w-sm mx-auto">
                 <div className="relative w-full h-[240px] rounded-xl overflow-hidden">
-                  <img
+                  <Image
                     src="/images/team-photo.jpeg"
                     alt="Marincool Team"
-                    className="w-full h-full object-contain bg-gray-100"
-                    loading="lazy"
+                    fill
+                    className="object-contain bg-gray-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 to-transparent" />
                   <div className="absolute bottom-3 left-3 text-white">
