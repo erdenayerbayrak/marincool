@@ -50,7 +50,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden animate-in zoom-in-50 duration-200">
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden animate-in zoom-in-50 duration-200">
         {/* Header */}
         <div className={`px-6 py-4 bg-gradient-to-r ${product.color} text-white flex items-center justify-between`}>
           <div className="flex items-center">
@@ -65,8 +65,8 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
           </button>
         </div>
 
-        {/* Scrollable Content */}
-        <div className="p-6 overflow-y-auto max-h-[calc(80vh-80px)]">
+        {/* Content */}
+        <div className="p-6">
             <p className="text-gray-700 mb-8 text-lg leading-relaxed">
               {product.fullDescription}
             </p>

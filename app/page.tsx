@@ -1,58 +1,46 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function SplashPage() {
   const router = useRouter();
-  const [isExpanding, setIsExpanding] = useState<"tr" | "en" | null>(null);
 
   const handleLanguageSelect = (lang: "tr" | "en") => {
-    setIsExpanding(lang);
-    // Anında yönlendirme - hiç bekleme yok
     router.push(`/${lang}`);
   };
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      {/* Turkish Section */}
-      <div
-        className={`absolute left-0 top-0 h-full bg-primary-navy flex items-center justify-center cursor-pointer transition-all duration-300 ease-out ${
-          isExpanding === "tr"
-            ? "w-full z-20"
-            : isExpanding === "en"
-            ? "w-0"
-            : "w-1/2 hover:w-[55%]"
-        }`}
-        onClick={() => handleLanguageSelect("tr")}
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
       >
-        <div className={`${isExpanding === "tr" ? "scale-110" : ""} transition-transform duration-200`}>
-          <h1 className="text-white text-4xl md:text-5xl font-semibold tracking-wider select-none">
-            TÜRKÇE
-          </h1>
-        </div>
-      </div>
+        <source src="/videos/karşılamavideo3.mp4" type="video/mp4" />
+      </video>
 
-      {/* English Section */}
-      <div
-        className={`absolute right-0 top-0 h-full bg-gray-light flex items-center justify-center cursor-pointer transition-all duration-300 ease-out ${
-          isExpanding === "en"
-            ? "w-full z-20"
-            : isExpanding === "tr"
-            ? "w-0"
-            : "w-1/2 hover:w-[55%]"
-        }`}
-        onClick={() => handleLanguageSelect("en")}
-      >
-        <div className={`${isExpanding === "en" ? "scale-110" : ""} transition-transform duration-200`}>
-          <h1 className="text-primary-navy text-4xl md:text-5xl font-semibold tracking-wider select-none">
-            ENGLISH
-          </h1>
-        </div>
-      </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30" />
 
-      {/* Center Divider */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3/5 bg-white/50 z-10" />
+      {/* Language Selection Buttons */}
+      <div className="absolute inset-0 flex items-center justify-center gap-8 z-10">
+        <button
+          onClick={() => handleLanguageSelect("tr")}
+          className="px-12 py-6 bg-primary-navy text-white text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:scale-105 hover:bg-primary-navy/90 shadow-xl"
+        >
+          TÜRKÇE
+        </button>
+        
+        <button
+          onClick={() => handleLanguageSelect("en")}
+          className="px-12 py-6 bg-white text-primary-navy text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 shadow-xl"
+        >
+          ENGLISH
+        </button>
+      </div>
     </div>
   );
 }

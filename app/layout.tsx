@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-
-// Optimized font loading for Core Web Vitals
-const poppins = Poppins({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: false,
-});
 
 export const metadata: Metadata = {
   title: "Marincool - Premium Marin Klima Sistemleri | Türkiye",
@@ -62,17 +51,8 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <head>
-        {/* Critical CSS preload */}
-        <link rel="preload" href="/fonts/poppins.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        
         {/* DNS prefetch for external domains */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//wa.me" />
-        
-        {/* Preconnect to critical domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#1e40af" />
@@ -87,7 +67,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
-      <body className={`${poppins.className} antialiased`}>
+      <body className="antialiased">
         {children}
         
         {/* Preload critical images */}

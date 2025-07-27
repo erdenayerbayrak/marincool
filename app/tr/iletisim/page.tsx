@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Head from "next/head";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
 
 // Structured Data for Contact Page
 const localBusinessSchema = {
@@ -287,12 +287,44 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-primary-navy mb-4">Sosyal Medya</h3>
                 <div className="flex space-x-4">
                   <a
+                    href="https://x.com/MarincoolS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
+                  >
+                    <FaTwitter />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/marincool/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/marincoolmarinehvac/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                  >
+                    <FaFacebook />
+                  </a>
+                  <a
                     href="https://www.instagram.com/marincool.com.tr/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
                   >
                     <FaInstagram />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@marincool"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                  >
+                    <FaYoutube />
                   </a>
                 </div>
               </div>

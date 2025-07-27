@@ -20,6 +20,7 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
     max-width: 100vw;
+    height: 100%;
   }
 
   body {
@@ -30,6 +31,8 @@
     min-width: 320px;
     overflow-x: hidden;
     max-width: 100vw;
+    overflow-y: auto;
+    height: 100%;
   }
 
   /* Performance optimizations */
@@ -44,7 +47,7 @@
   }
 
   /* Smooth scrolling optimizations */
-  * {
+  body {
     -webkit-overflow-scrolling: touch;
   }
 
