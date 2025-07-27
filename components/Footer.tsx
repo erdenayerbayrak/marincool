@@ -58,11 +58,11 @@ export default function Footer({ lang }: FooterProps) {
           <div>
             <div className="relative w-48 h-12 mb-4">
               <Image
-                src="/images/logo1.png"
+                src="/images/logo.png"
                 alt="Marincool Logo"
                 fill
                 sizes="150px"
-                className="object-contain brightness-0 invert"
+                className="object-contain"
               />
             </div>
             <p className="text-gray-300 text-sm">{t.about}</p>

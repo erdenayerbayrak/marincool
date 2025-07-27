@@ -50,7 +50,7 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
           <Link href={`/${lang}`} className="flex items-center">
             <div className="relative w-24 sm:w-28 md:w-36 h-6 sm:h-8 md:h-10">
               <Image
-                src="/images/logo1.png"
+                src="/images/logo.png"
                 alt="Marincool Logo"
                 fill
                 sizes="(max-width: 640px) 112px, 144px"

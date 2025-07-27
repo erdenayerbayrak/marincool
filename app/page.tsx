@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function SplashPage() {
   const router = useRouter();
@@ -18,8 +19,9 @@ export default function SplashPage() {
         loop
         muted
         playsInline
+        preload="auto"
       >
-        <source src="/videos/karşılamavideo3.mp4" type="video/mp4" />
+        <source src="/images/karşılamavideo.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
@@ -27,19 +29,29 @@ export default function SplashPage() {
 
       {/* Language Selection Buttons */}
       <div className="absolute inset-0 flex items-center justify-center gap-8 z-10">
-        <button
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => handleLanguageSelect("tr")}
-          className="px-12 py-6 bg-primary-navy text-white text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:scale-105 hover:bg-primary-navy/90 shadow-xl"
+          className="px-12 py-6 bg-primary-navy text-white text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-primary-navy/90 shadow-xl"
         >
           TÜRKÇE
-        </button>
+        </motion.button>
         
-        <button
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => handleLanguageSelect("en")}
-          className="px-12 py-6 bg-white text-primary-navy text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 shadow-xl"
+          className="px-12 py-6 bg-white text-primary-navy text-2xl md:text-3xl font-semibold tracking-wider rounded-lg transition-all duration-300 hover:bg-white/90 shadow-xl"
         >
           ENGLISH
-        </button>
+        </motion.button>
       </div>
     </div>
   );
