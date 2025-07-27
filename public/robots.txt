@@ -1,0 +1,76 @@
+# robots.txt for marincool.com
+# SEO Optimized for Marine Air Conditioning Systems
+
+User-agent: *
+Allow: /
+
+# Allow all main pages
+Allow: /tr/
+Allow: /en/
+Allow: /images/
+Allow: /_next/static/
+
+# Disallow admin and private areas (if any in future)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Disallow temporary or development files
+Disallow: *.pdf$
+Disallow: /temp/
+Disallow: /tmp/
+
+# Allow specific important resources for SEO
+Allow: /images/marincool-logo.png
+Allow: /images/vrf-system.jpg
+Allow: /images/chiller-system.jpg
+Allow: /images/monoblock-system.jpg
+
+# Sitemap location
+Sitemap: https://marincool.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific instructions for different bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Social media bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block aggressive crawlers
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Host directive (helps with canonicalization)
+Host: https://marincool.com
+
+# Additional SEO directives for live domain
+# Allow Googlebot Image
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow Googlebot News (if news content added in future)
+User-agent: Googlebot-News
+Allow: /

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Spotlight } from "@/components/ui/Spotlight";
+import { useMemo } from "react";
 
 interface ProductsSectionProps {
   lang: "tr" | "en";
@@ -104,7 +104,7 @@ const content = {
 };
 
 export default function ProductsSection({ lang }: ProductsSectionProps) {
-  const t = content[lang];
+  const t = useMemo(() => content[lang], [lang]);
 
   return (
     <section className="section-padding bg-gray-light">
@@ -126,20 +126,17 @@ export default function ProductsSection({ lang }: ProductsSectionProps) {
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "50px" }}
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 will-change-transform"
             >
-              <Spotlight className="from-primary-blue/20 via-primary-navy/10 to-transparent" size={250} />
               
-              {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/5 via-primary-blue/5 to-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Card Content */}
               <div className="relative p-6 h-full flex flex-col">
                 {/* Header */}
                 <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-navy to-primary-blue rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-navy to-primary-blue rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200 transform-gpu">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
@@ -173,11 +170,11 @@ export default function ProductsSection({ lang }: ProductsSectionProps) {
 
                 {/* CTA Button */}
                 <Link
-                  href={`/${lang}/urunlerimiz#${product.id}`}
-                  className="inline-flex items-center justify-center w-full py-2.5 px-4 bg-primary-navy text-white text-sm font-semibold rounded-xl hover:bg-primary-blue transition-all duration-300 group-hover:transform group-hover:translate-y-0 group-hover:shadow-lg"
+                  href={`/${lang}/${lang === 'tr' ? 'urunlerimiz' : 'products'}#${product.id}`}
+                  className="inline-flex items-center justify-center w-full py-2.5 px-4 bg-primary-navy text-white text-sm font-semibold rounded-xl hover:bg-primary-blue transition-colors duration-200 transform-gpu"
                 >
                   {product.link}
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200 transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>

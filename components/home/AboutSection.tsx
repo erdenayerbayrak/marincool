@@ -108,32 +108,22 @@ export default function AboutSection({ lang }: AboutSectionProps) {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-primary-navy to-primary-blue rounded-2xl p-8 text-white overflow-hidden">
-              <Spotlight className="from-white/10 via-white/5 to-transparent" size={200} />
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div>
-                  <h3 className="text-3xl font-bold text-accent-green mb-2">15+</h3>
-                  <p className="text-sm opacity-90">Yıllık Deneyim</p>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-accent-green mb-2">500+</h3>
-                  <p className="text-sm opacity-90">Mutlu Müşteri</p>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-accent-green mb-2">1000+</h3>
-                  <p className="text-sm opacity-90">Tamamlanan Proje</p>
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-accent-green mb-2">7/24</h3>
-                  <p className="text-sm opacity-90">Teknik Destek</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-                <p className="text-sm text-center opacity-90">
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/yat1.jpg"
+                alt="Marincool Marine Services"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/80 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">
+                  {lang === "tr" ? "Profesyonel Marin Klima Çözümleri" : "Professional Marine Climate Solutions"}
+                </h3>
+                <p className="opacity-90">
                   {lang === "tr" 
-                    ? "Bizimle çalıştığınızda, güvenilirlik, kalite ve mükemmel hizmetin bir araya geldiği bir deneyim yaşayacaksınız."
-                    : "When you work with us, you will experience where reliability, quality and excellent service come together."
+                    ? "Yatınızın konforu için en kaliteli hizmeti sunuyoruz."
+                    : "We provide the highest quality service for your yacht's comfort."
                   }
                 </p>
               </div>

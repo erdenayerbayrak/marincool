@@ -2,10 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import Head from "next/head";
+import { useState, useCallback, useMemo } from "react";
 import { FaCheckCircle, FaThermometerHalf, FaWind, FaTachometerAlt, FaCog, FaShieldAlt } from "react-icons/fa";
-import { Spotlight } from "@/components/ui/Spotlight";
-import ProductModal from "@/components/ui/ProductModal";
+import dynamic from "next/dynamic";
+
+// Lazy load modal for better performance
+const ProductModal = dynamic(() => import("@/components/ui/ProductModal"), {
+  loading: () => <div className="fixed inset-0 bg-black/50 flex items-center justify-center"><div className="bg-white p-4 rounded-lg">Yükleniyor...</div></div>
+});
 
 const products = [
   {
@@ -125,21 +130,118 @@ const products = [
   },
 ];
 
+// Structured Data for Products Page
+const productsPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Premium Marin Klima Sistemleri",
+  "description": "Yatınızın büyüklüğü ve ihtiyaçlarına özel, dünya standartlarında klima çözümleri.",
+  "url": "https://marincool.com/tr/urunlerimiz",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "VRF Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#vrf"
+      },
+      {
+        "@type": "Product",
+        "position": 2,
+        "name": "Chiller Marin Klima Sistemi", 
+        "url": "https://marincool.com/tr/urunlerimiz#chiller"
+      },
+      {
+        "@type": "Product",
+        "position": 3,
+        "name": "Monoblok Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#monoblok"
+      },
+      {
+        "@type": "Product",
+        "position": 4,
+        "name": "Multi Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#multi"
+      },
+      {
+        "@type": "Product",
+        "position": 5,
+        "name": "Split Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#split"
+      }
+    ]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://marincool.com/tr"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ürünlerimiz",
+      "item": "https://marincool.com/tr/urunlerimiz"
+    }
+  ]
+};
+
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (product: typeof products[0]) => {
+  // Memoized callbacks for better performance
+  const openModal = useCallback((product: typeof products[0]) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     setSelectedProduct(null);
-  };
+  }, []);
+
+  // Memoize products data to prevent re-renders
+  const memoizedProducts = useMemo(() => products, []);
 
   return (
+    <>
+      <Head>
+        {/* Enhanced Meta Tags */}
+        <title>Premium Marin Klima Sistemleri - VRF, Chiller, Monoblok | Marincool Muğla</title>
+        <meta name="description" content="Yatınız için ideal marin klima sistemi seçenekleri: VRF, Chiller, Monoblok, Multi ve Split sistemler. Uzman montaj ve garanti ile Muğla'da hizmet." />
+        <meta name="keywords" content="marin klima sistemleri, yat kliması, VRF marin klima, Chiller yat kliması, Monoblok klima, Multi sistem, Split klima, Muğla marin klima" />
+        <link rel="canonical" href="https://marincool.com/tr/urunlerimiz" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Premium Marin Klima Sistemleri | Marincool" />
+        <meta property="og:description" content="Büyük yatlardan küçük teknelere kadar her boyut için özel klima çözümleri. 5 farklı sistem seçeneği." />
+        <meta property="og:url" content="https://marincool.com/tr/urunlerimiz" />
+        <meta property="og:type" content="website" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productsPageSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+      </Head>
+      
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
@@ -147,7 +249,7 @@ export default function ProductsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="text-center text-white"
           >
             <h1 className="heading-1 mb-6">Premium Marin Klima Sistemleri</h1>
@@ -163,16 +265,15 @@ export default function ProductsPage() {
       <section className="section-padding">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {products.map((product, index) => (
+            {memoizedProducts.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+                transition={{ duration: 0.2, delay: index * 0.02 }}
+                viewport={{ once: true, margin: "50px" }}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-200 overflow-hidden border border-gray-100 will-change-transform transform-gpu"
               >
-                <Spotlight className="from-primary-blue/20 via-primary-navy/10 to-transparent" size={300} />
                 
                 {/* Card Header */}
                 <div className={`h-32 bg-gradient-to-r ${product.color} relative overflow-hidden`}>
@@ -211,7 +312,7 @@ export default function ProductsPage() {
                   {/* CTA Button */}
                   <button
                     onClick={() => openModal(product)}
-                    className="inline-flex items-center justify-center w-full py-3 px-4 bg-primary-navy text-white font-semibold rounded-xl hover:bg-primary-blue transition-all duration-300 group-hover:transform group-hover:scale-105"
+                    className="inline-flex items-center justify-center w-full py-3 px-4 bg-primary-navy text-white font-semibold rounded-xl hover:bg-primary-blue transition-colors duration-200 transform-gpu"
                   >
                     Detaylı Bilgi
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,5 +334,6 @@ export default function ProductsPage() {
         onClose={closeModal}
       />
     </div>
+    </>
   );
 }

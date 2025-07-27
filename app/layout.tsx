@@ -2,19 +2,56 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
+// Optimized font loading for Core Web Vitals
 const poppins = Poppins({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
-  title: "Marincool - Marin Klima Sistemleri",
-  description: "Marincool olarak VRF, Chiller ve Monoblok marin klima sistemleri ile yat sahiplerine profesyonel klima çözümleri sunuyoruz.",
-  keywords: "marin klima sistemleri, yat kliması, tekne klima servisi, Marincool",
+  title: "Marincool - Premium Marin Klima Sistemleri | Türkiye",
+  description: "Marincool olarak VRF, Chiller ve Monoblok marin klima sistemleri ile yat sahiplerine profesyonel klima çözümleri sunuyoruz. Muğla merkezli uzman marin klima servisi.",
+  keywords: "marin klima sistemleri, yat kliması, tekne klima servisi, Marincool, VRF marin klima, Chiller marin klima, Monoblok klima, Muğla marin klima",
   authors: [{ name: "Marincool" }],
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  alternates: {
+    canonical: "https://marincool.com",
+    languages: {
+      'tr': 'https://marincool.com/tr',
+      'en': 'https://marincool.com/en',
+    },
+  },
+  verification: {
+    google: 'please-add-your-google-search-console-verification-code',
+    other: {
+      'msvalidate.01': 'please-add-bing-webmaster-verification-code',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'tr_TR',
+    url: 'https://marincool.com',
+    siteName: 'Marincool',
+    title: 'Marincool - Premium Marin Klima Sistemleri',
+    description: 'Türkiye\'nin lider marin klima uzmanı. VRF, Chiller ve Monoblok sistemlerle profesyonel yacht climate solutions.',
+    images: [{
+      url: 'https://marincool.com/images/anasayfa1.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Marincool Marine Air Conditioning Systems',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marincool - Premium Marin Klima Sistemleri',
+    description: 'Türkiye\'nin lider marin klima uzmanı. Profesyonel yacht climate solutions.',
+    images: ['https://marincool.com/images/marincool-twitter-card.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +61,39 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className="scroll-smooth">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <head>
+        {/* Critical CSS preload */}
+        <link rel="preload" href="/fonts/poppins.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* DNS prefetch for external domains */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//wa.me" />
+        
+        {/* Preconnect to critical domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Theme color for mobile browsers */}
+        <meta name="theme-color" content="#1e40af" />
+        <meta name="msapplication-TileColor" content="#1e40af" />
+        
+        {/* Performance hints */}
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        
+        {/* Scroll performance optimization */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </head>
+      <body className={`${poppins.className} antialiased`}>
+        {children}
+        
+        {/* Preload critical images */}
+        <link rel="preload" as="image" href="/images/marincool-logo.png" />
+        <link rel="preload" as="image" href="/images/anasayfa1.jpg" />
+      </body>
     </html>
   );
 }

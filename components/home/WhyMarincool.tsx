@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 interface WhyMarincoolProps {
   lang: "tr" | "en";
@@ -36,47 +35,52 @@ export default function WhyMarincool({ lang }: WhyMarincoolProps) {
   const t = content[lang];
 
   return (
-    <section className="section-padding">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative h-[400px] rounded-lg overflow-hidden shadow-xl"
-          >
-            <Image
-              src="/images/team-photo.jpg"
-              alt="Marincool Team"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
+    <section className="relative py-12 bg-gray-50">
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="heading-2 text-primary-navy mb-8">{t.title}</h2>
-            <ul className="space-y-4">
+      <div className="container">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-semibold text-primary-navy mb-3">{t.title}</h2>
+          <div className="w-16 h-0.5 bg-primary-navy mx-auto"></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left - Visual Content */}
+            <div className="relative">
+              <div className="relative bg-white p-3 rounded-2xl shadow-lg max-w-sm mx-auto">
+                <div className="relative w-full h-[240px] rounded-xl overflow-hidden">
+                  <img
+                    src="/images/team-photo.jpeg"
+                    alt="Marincool Team"
+                    className="w-full h-full object-contain bg-gray-100"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/30 to-transparent" />
+                  <div className="absolute bottom-3 left-3 text-white">
+                    <h3 className="text-base font-semibold">
+                      {lang === "tr" ? "Uzman Ekibimiz" : "Our Expert Team"}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Features List */}
+            <div className="space-y-3">
               {t.features.map((feature, index) => (
-                <motion.li
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center space-x-3"
+                  className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
-                  <FaCheckCircle className="text-2xl text-accent-green flex-shrink-0" />
-                  <span className="text-lg text-gray-700">{feature}</span>
-                </motion.li>
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent-green/10 rounded-lg flex items-center justify-center">
+                    <FaCheckCircle className="text-accent-green text-sm" />
+                  </div>
+                  <span className="text-gray-800 font-medium">{feature}</span>
+                </div>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

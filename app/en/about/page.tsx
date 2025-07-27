@@ -2,10 +2,161 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Head from "next/head";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
+
+// Structured Data for About Page (English)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Marincool",
+  "legalName": "Marincool Marine Air Conditioning Systems",
+  "url": "https://marincool.com",
+  "logo": "https://marincool.com/images/marincool-logo.png",
+  "description": "Turkey's leading marine air conditioning systems expert. 15 years of experience with VRF, Chiller and Monoblock climate solutions.",
+  "foundingDate": "2008",
+  "founder": {
+    "@type": "Person",
+    "name": "Marincool Founder"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Merkez, Cengiz Topel Cd. No:82/A",
+    "addressLocality": "Dalaman",
+    "addressRegion": "Muğla",
+    "postalCode": "48770",
+    "addressCountry": "TR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+90-551-508-50-85",
+    "contactType": "customer service",
+    "areaServed": "TR",
+    "availableLanguage": ["Turkish", "English"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/marincool.com.tr/"
+  ],
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 15,
+    "maxValue": 50
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "36.7666666",
+      "longitude": "28.7777777"
+    },
+    "geoRadius": "500000"
+  },
+  "knowsAbout": [
+    "Marine Air Conditioning",
+    "VRF Systems",
+    "Chiller Systems",
+    "Yacht Climate Control",
+    "Boat Air Conditioning"
+  ],
+  "award": "Turkey Marine Climate Leader"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://marincool.com",
+  "name": "Marincool",
+  "image": "https://marincool.com/images/marincool-logo.png",
+  "telephone": "+90-551-508-50-85",
+  "email": "info@marincool.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Merkez, Cengiz Topel Cd. No:82/A",
+    "addressLocality": "Dalaman",
+    "addressRegion": "Muğla",
+    "postalCode": "48770",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.7666666",
+    "longitude": "28.7777777"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ],
+  "priceRange": "$$",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+  "currenciesAccepted": "TRY"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://marincool.com/en"
+    },
+    {
+      "@type": "ListItem", 
+      "position": 2,
+      "name": "About",
+      "item": "https://marincool.com/en/about"
+    }
+  ]
+};
 
 export default function AboutPage() {
   return (
+    <>
+      <Head>
+        {/* Enhanced Meta Tags */}
+        <title>About Us - Turkey's Leading Marine Climate Expert | Marincool Muğla</title>
+        <meta name="description" content="15 years of experience in marine air conditioning since 2008. Muğla-based Marincool provides professional yacht solutions with VRF, Chiller and Monoblock systems." />
+        <meta name="keywords" content="About Marincool, marine AC expert, yacht climate company, Muğla marine AC, experienced yacht service, marine climate history" />
+        <link rel="canonical" href="https://marincool.com/en/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="About Us - Turkey's Leading Marine Climate Expert | Marincool" />
+        <meta property="og:description" content="15 years of experience as Turkey's most trusted marine air conditioning company. Serving all Turkey from Muğla." />
+        <meta property="og:url" content="https://marincool.com/en/about" />
+        <meta property="og:type" content="website" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+      </Head>
+      
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
@@ -291,5 +442,6 @@ export default function AboutPage() {
       </section>
 
     </div>
+    </>
   );
 }

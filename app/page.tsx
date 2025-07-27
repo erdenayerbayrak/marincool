@@ -9,16 +9,15 @@ export default function SplashPage() {
 
   const handleLanguageSelect = (lang: "tr" | "en") => {
     setIsExpanding(lang);
-    setTimeout(() => {
-      router.push(`/${lang}`);
-    }, 300);
+    // Anında yönlendirme - hiç bekleme yok
+    router.push(`/${lang}`);
   };
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
       {/* Turkish Section */}
       <div
-        className={`absolute left-0 top-0 h-full bg-primary-navy flex items-center justify-center cursor-pointer transition-all duration-1000 ease-in-out ${
+        className={`absolute left-0 top-0 h-full bg-primary-navy flex items-center justify-center cursor-pointer transition-all duration-300 ease-out ${
           isExpanding === "tr"
             ? "w-full z-20"
             : isExpanding === "en"
@@ -27,7 +26,7 @@ export default function SplashPage() {
         }`}
         onClick={() => handleLanguageSelect("tr")}
       >
-        <div className={`${isExpanding === "tr" ? "scale-110" : ""} transition-transform duration-500`}>
+        <div className={`${isExpanding === "tr" ? "scale-110" : ""} transition-transform duration-200`}>
           <h1 className="text-white text-4xl md:text-5xl font-semibold tracking-wider select-none">
             TÜRKÇE
           </h1>
@@ -36,7 +35,7 @@ export default function SplashPage() {
 
       {/* English Section */}
       <div
-        className={`absolute right-0 top-0 h-full bg-gray-light flex items-center justify-center cursor-pointer transition-all duration-1000 ease-in-out ${
+        className={`absolute right-0 top-0 h-full bg-gray-light flex items-center justify-center cursor-pointer transition-all duration-300 ease-out ${
           isExpanding === "en"
             ? "w-full z-20"
             : isExpanding === "tr"
@@ -45,7 +44,7 @@ export default function SplashPage() {
         }`}
         onClick={() => handleLanguageSelect("en")}
       >
-        <div className={`${isExpanding === "en" ? "scale-110" : ""} transition-transform duration-500`}>
+        <div className={`${isExpanding === "en" ? "scale-110" : ""} transition-transform duration-200`}>
           <h1 className="text-primary-navy text-4xl md:text-5xl font-semibold tracking-wider select-none">
             ENGLISH
           </h1>

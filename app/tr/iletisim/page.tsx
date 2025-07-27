@@ -2,7 +2,114 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Head from "next/head";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram } from "react-icons/fa";
+
+// Structured Data for Contact Page
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://marincool.com",
+  "name": "Marincool",
+  "alternateName": "Marincool Marin Klima Sistemleri",
+  "description": "Muğla'nın lider marin klima servisi. VRF, Chiller ve Monoblok sistemlerle profesyonel yat kliması çözümleri.",
+  "image": "https://marincool.com/images/marincool-logo.png",
+  "telephone": "+90-551-508-50-85",
+  "email": "info@marincool.com",
+  "url": "https://marincool.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Merkez, Cengiz Topel Cd. No:82/A",
+    "addressLocality": "Dalaman",
+    "addressRegion": "Muğla",
+    "postalCode": "48770",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.7666666",
+    "longitude": "28.7777777"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  },
+  "priceRange": "$$",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+  "currenciesAccepted": "TRY",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Muğla"
+    },
+    {
+      "@type": "City", 
+      "name": "Bodrum"
+    },
+    {
+      "@type": "City",
+      "name": "Marmaris"
+    },
+    {
+      "@type": "City",
+      "name": "Göcek"
+    }
+  ],
+  "hasMap": "https://maps.google.com/?q=36.7666666,28.7777777"
+};
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "İletişim - Marincool",
+  "description": "Marin klima sistemleri için uzman ekibimizle iletişime geçin. Hemen WhatsApp'tan yazın veya araın.",
+  "url": "https://marincool.com/tr/iletisim",
+  "mainEntity": {
+    "@type": "ContactPoint",
+    "telephone": "+90-551-508-50-85",
+    "contactType": "customer service",
+    "areaServed": "TR",
+    "availableLanguage": ["Turkish", "English"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "description": "Acil durum 7/24 erişilebilir"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://marincool.com/tr"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "İletişim",
+      "item": "https://marincool.com/tr/iletisim"
+    }
+  ]
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -41,6 +148,47 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+      <Head>
+        {/* Enhanced Meta Tags */}
+        <title>İletişim - Marin Klima Uzmanı | Marincool Muğla | WhatsApp: +90 551 508 50 85</title>
+        <meta name="description" content="Marincool ile iletişime geçin! Muğla, Bodrum, Göcek'te marin klima servisi. WhatsApp: +90 551 508 50 85. Hızlı teklif ve 7/24 acil servis." />
+        <meta name="keywords" content="Marincool iletişim, Muğla marin klima, Dalaman yat servisi, WhatsApp marin klima, acil klima servisi, yat kliması telefon" />
+        <link rel="canonical" href="https://marincool.com/tr/iletisim" />
+        
+        {/* Local Business Markup */}
+        <meta name="geo.region" content="TR-48" />
+        <meta name="geo.placename" content="Dalaman, Muğla" />
+        <meta name="geo.position" content="36.7666666;28.7777777" />
+        <meta name="ICBM" content="36.7666666, 28.7777777" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="İletişim - Marin Klima Uzmanı | Marincool Muğla" />
+        <meta property="og:description" content="Hızlı WhatsApp iletişimi: +90 551 508 50 85. Muğla'nın en güvenilir marin klima servisi." />
+        <meta property="og:url" content="https://marincool.com/tr/iletisim" />
+        <meta property="og:type" content="website" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(contactPageSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+      </Head>
+      
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
@@ -232,5 +380,6 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -11,12 +11,13 @@ type SpotlightProps = {
 
 export function Spotlight({
   className,
-  size = 200,
-  springOptions = { bounce: 0 },
+  size = 120,
+  springOptions = { bounce: 0, damping: 30, stiffness: 300 },
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [parentElement, setParentElement] = useState<HTMLElement | null>(null);
+  const rafRef = useRef<number>();
 
   const mouseX = useSpring(0, springOptions);
   const mouseY = useSpring(0, springOptions);
@@ -38,9 +39,17 @@ export function Spotlight({
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {
       if (!parentElement) return;
-      const { left, top } = parentElement.getBoundingClientRect();
-      mouseX.set(event.clientX - left);
-      mouseY.set(event.clientY - top);
+      
+      // Use requestAnimationFrame to throttle updates
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      
+      rafRef.current = requestAnimationFrame(() => {
+        const { left, top } = parentElement.getBoundingClientRect();
+        mouseX.set(event.clientX - left);
+        mouseY.set(event.clientY - top);
+      });
     },
     [mouseX, mouseY, parentElement]
   );
@@ -58,6 +67,11 @@ export function Spotlight({
       parentElement.removeEventListener('mouseleave', () =>
         setIsHovered(false)
       );
+      
+      // Cancel any pending animation frame
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
     };
   }, [parentElement, handleMouseMove]);
 
@@ -65,7 +79,7 @@ export function Spotlight({
     <motion.div
       ref={containerRef}
       className={cn(
-        'pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200',
+        'pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-lg transition-opacity duration-150 will-change-transform',
         'from-zinc-50 via-zinc-100 to-zinc-200',
         isHovered ? 'opacity-100' : 'opacity-0',
         className
@@ -75,6 +89,7 @@ export function Spotlight({
         height: size,
         left: spotlightLeft,
         top: spotlightTop,
+        transform: 'translateZ(0)', // Force GPU acceleration
       }}
     />
   );

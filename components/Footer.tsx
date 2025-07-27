@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 interface FooterProps {
   lang: "tr" | "en";
@@ -98,28 +98,12 @@ export default function Footer({ lang }: FooterProps) {
             <h4 className="text-lg font-semibold mb-4">{t.followUs}</h4>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaFacebook className="text-2xl" />
-              </a>
-              <a
                 href="https://www.instagram.com/marincool.com.tr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 <FaInstagram className="text-2xl" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaLinkedin className="text-2xl" />
               </a>
             </div>
           </div>

@@ -29,7 +29,6 @@ const content = {
 const heroImages = [
   "/images/anasayfa1.jpg",
   "/images/anasayfa2.jpg",
-  "/images/yat1.jpg",
   "/images/yat2.jpg",
 ];
 
