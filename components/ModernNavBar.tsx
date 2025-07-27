@@ -43,17 +43,36 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
     if (isMobileMenuOpen) {
       document.addEventListener('click', handleClickOutside)
       document.addEventListener('keydown', handleEscKey)
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden'
+      // Prevent body scroll when menu is open - mobile specific
+      if (window.innerWidth <= 768) {
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${window.scrollY}px`
+        document.body.style.width = '100%'
+      }
     } else {
-      // Restore body scroll when menu is closed
-      document.body.style.overflow = 'auto'
+      // Restore body scroll when menu is closed - mobile specific
+      if (window.innerWidth <= 768) {
+        const scrollY = document.body.style.top
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.width = ''
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
     }
 
     return () => {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEscKey)
-      document.body.style.overflow = 'auto'
+      // Restore scroll position on cleanup
+      if (window.innerWidth <= 768) {
+        const scrollY = document.body.style.top
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.width = ''
+        if (scrollY) {
+          window.scrollTo(0, parseInt(scrollY) * -1)
+        }
+      }
     }
   }, [isMobileMenuOpen])
 

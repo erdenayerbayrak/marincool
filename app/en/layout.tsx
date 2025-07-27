@@ -25,7 +25,7 @@ export default function EnglishLayout({
   return (
     <>
       <Header lang="en" />
-      <main className="min-h-screen pt-16">{children}</main>
+      <main className="min-h-[calc(100vh-4rem)] pt-16">{children}</main>
       <Footer lang="en" />
       <WhatsAppButton />
     </>
