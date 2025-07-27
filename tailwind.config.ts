@@ -22,7 +22,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "system-ui", "sans-serif"],
+        sans: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

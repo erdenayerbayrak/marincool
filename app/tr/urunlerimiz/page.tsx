@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Head from "next/head";
 import { useState, useCallback, useMemo } from "react";
@@ -246,18 +245,13 @@ export default function ProductsPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-navy to-primary-blue">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="text-center text-white"
-          >
+          <div className="text-center text-white">
             <h1 className="heading-1 mb-6">Premium Marin Klima Sistemleri</h1>
             <p className="text-xl max-w-3xl mx-auto opacity-90">
               Yatınızın büyüklüğü ve ihtiyaçlarına özel, dünya standartlarında klima çözümleri sunuyoruz. 
               Her boyut yat için ideal iklimlendirme sistemleri ile denizde maksimum konfor garantisi.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -266,13 +260,9 @@ export default function ProductsPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {memoizedProducts.map((product, index) => (
-              <motion.div
+              <div
                 key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.02 }}
-                viewport={{ once: true, margin: "50px" }}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-200 overflow-hidden border border-gray-100 will-change-transform transform-gpu"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden border border-gray-100"
               >
                 
                 {/* Card Header */}
@@ -320,7 +310,7 @@ export default function ProductsPage() {
                     </svg>
                   </button>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

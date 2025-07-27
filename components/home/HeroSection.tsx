@@ -54,6 +54,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           src="/images/yat6.jpg"
           alt="Yacht Decorative"
           fill
+          sizes="50vw"
           className="object-cover object-left"
         />
       </div>
@@ -71,6 +72,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
               src={image}
               alt={`Marincool Hero ${index + 1}`}
               fill
+              sizes="100vw"
               className="object-cover"
               priority={index === 0}
               quality={90}

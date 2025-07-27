@@ -46,6 +46,7 @@ export default function Footer({ lang }: FooterProps) {
           src="/images/yat5.jpg"
           alt="Yacht Background"
           fill
+          sizes="100vw"
           className="object-cover opacity-15"
         />
         <div className="absolute inset-0 bg-primary-navy/85" />
@@ -60,6 +61,7 @@ export default function Footer({ lang }: FooterProps) {
                 src="/images/logo1.png"
                 alt="Marincool Logo"
                 fill
+                sizes="150px"
                 className="object-contain brightness-0 invert"
               />
             </div>

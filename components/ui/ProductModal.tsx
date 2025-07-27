@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import { useEffect } from "react";
 
@@ -25,139 +24,117 @@ interface ProductModalProps {
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     };
-
+    
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      // Don't block page scroll - let it remain scrollable
     }
-
+    
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
 
-  if (!product) return null;
+  if (!product || !isOpen) return null;
 
   const Icon = product.icon;
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={onClose}
-          />
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/60"
+        onClick={onClose}
+      />
 
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden"
-          >
-            {/* Close Button */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/90 rounded-full shadow-lg hover:bg-white transition-colors"
-            >
-              <FaTimes className="text-gray-600" />
-            </button>
+      {/* Modal */}
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden animate-in zoom-in-50 duration-200">
+        {/* Header */}
+        <div className={`px-6 py-4 bg-gradient-to-r ${product.color} text-white flex items-center justify-between`}>
+          <div className="flex items-center">
+            <Icon className="text-2xl mr-3" />
+            <div>
+              <h3 className="text-xl font-bold">{product.name}</h3>
+              <p className="text-sm opacity-90">{product.idealFor}</p>
+            </div>
+          </div>
+          <button onClick={onClose} className="text-white/80 hover:text-white">
+            <FaTimes className="text-lg" />
+          </button>
+        </div>
 
-            {/* Modal Content */}
-            <div className="overflow-y-auto max-h-[90vh]">
-              {/* Header */}
-              <div className={`p-8 bg-gradient-to-r ${product.color} text-white`}>
-                <div className="flex items-center">
-                  <Icon className="text-4xl mr-4" />
-                  <div>
-                    <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
-                    <p className="text-xl opacity-90">{product.shortDesc}</p>
-                  </div>
-                </div>
+        {/* Scrollable Content */}
+        <div className="p-6 overflow-y-auto max-h-[calc(80vh-80px)]">
+            <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+              {product.fullDescription}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Features */}
+              <div>
+                <h4 className="text-lg font-bold text-primary-navy mb-4">Özellikler</h4>
+                <ul className="space-y-3">
+                  {product.features.map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <FaCheckCircle className="text-accent-green mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Content */}
-              <div className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Description & Features */}
-                  <div>
-                    <h3 className="text-2xl font-semibold text-primary-navy mb-6">Sistem Özellikleri</h3>
-                    <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-                      {product.fullDescription}
-                    </p>
-
-                    <h4 className="text-xl font-semibold text-primary-navy mb-6">Temel Özellikler</h4>
-                    <ul className="space-y-4">
-                      {product.features.map((feature, index) => (
-                        <li key={index} className="flex items-start">
-                          <FaCheckCircle className="text-accent-green mt-1 mr-3 flex-shrink-0 text-lg" />
-                          <span className="text-gray-700 text-lg">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Specifications */}
-                  <div>
-                    <h3 className="text-2xl font-semibold text-primary-navy mb-6">Teknik Özellikler</h3>
-                    <div className="bg-gray-50 rounded-xl p-6 mb-8">
-                      {Object.entries(product.specifications).map(([key, value], index) => (
-                        <div key={index} className="flex justify-between py-3 border-b border-gray-200 last:border-b-0">
-                          <span className="font-semibold text-gray-700 capitalize text-lg">
-                            {key === 'capacity' ? 'Kapasite' : 
-                             key === 'zones' ? 'Bölge Sayısı' :
-                             key === 'efficiency' ? 'Verimlilik' :
-                             key === 'warranty' ? 'Garanti' :
-                             key === 'type' ? 'Tip' :
-                             key === 'dimensions' ? 'Boyutlar' : key}:
-                          </span>
-                          <span className="text-gray-600 text-lg">{value}</span>
-                        </div>
-                      ))}
+              {/* Specs */}
+              <div>
+                <h4 className="text-lg font-bold text-primary-navy mb-4">Teknik Bilgiler</h4>
+                <div className="bg-gray-50 rounded-lg p-4 space-y-3">
+                  {Object.entries(product.specifications).map(([key, value], index) => (
+                    <div key={index} className="flex justify-between text-sm">
+                      <span className="font-medium text-gray-700">
+                        {key === 'capacity' ? 'Kapasite' : 
+                         key === 'zones' ? 'Bölge Sayısı' :
+                         key === 'efficiency' ? 'Verimlilik' :
+                         key === 'warranty' ? 'Garanti' :
+                         key === 'type' ? 'Tip' :
+                         key === 'dimensions' ? 'Boyutlar' : key}:
+                      </span>
+                      <span className="text-gray-600">{value}</span>
                     </div>
-
-                    <div className="bg-accent-green/10 rounded-xl p-6">
-                      <h4 className="font-semibold text-primary-navy mb-3 text-xl">İdeal Kullanım</h4>
-                      <p className="text-gray-700 text-lg">{product.idealFor}</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-
-                {/* CTA Section */}
-                <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-                  <p className="text-gray-600 mb-8 text-lg">
-                    {product.name} hakkında daha fazla bilgi almak ve projeleriniz için teklif almak isterseniz bizimle iletişime geçin.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a 
-                      href="https://wa.me/905515085085" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="btn btn-primary text-lg px-8 py-4"
-                    >
-                      WhatsApp&apos;tan İletişime Geçin
-                    </a>
-                    <a href="/tr/iletisim" className="btn btn-outline text-lg px-8 py-4">
-                      İletişim Bilgileri
-                    </a>
-                  </div>
+                
+                <div className="mt-4 p-3 bg-accent-green/10 rounded-lg">
+                  <h5 className="font-medium text-primary-navy mb-1 text-sm">İdeal Kullanım</h5>
+                  <p className="text-gray-700 text-sm">{product.idealFor}</p>
                 </div>
               </div>
             </div>
-          </motion.div>
+
+            {/* CTA Section */}
+            <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+              <p className="text-gray-600 mb-4">
+                {product.name} hakkında bilgi almak için iletişime geçin.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a 
+                  href="https://wa.me/905515085085" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center justify-center px-6 py-2 bg-accent-green text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
+                >
+                  WhatsApp'tan Bilgi Al
+                </a>
+                <button 
+                  onClick={onClose}
+                  className="inline-flex items-center justify-center px-6 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors"
+                >
+                  Kapat
+                </button>
+              </div>
+            </div>
         </div>
-      )}
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }

@@ -50,6 +50,7 @@ export default function AboutSection({ lang }: AboutSectionProps) {
           src="/images/yat4.jpg"
           alt="Yacht Background"
           fill
+          sizes="50vw"
           className="object-cover object-left"
         />
       </div>
@@ -113,6 +114,7 @@ export default function AboutSection({ lang }: AboutSectionProps) {
                 src="/images/yat1.jpg"
                 alt="Marincool Marine Services"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/80 to-transparent" />

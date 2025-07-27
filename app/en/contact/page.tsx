@@ -209,8 +209,17 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info & Form Section */}
-      <section className="section-padding">
-        <div className="container">
+      <section className="relative section-padding">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/yat3.jpg"
+            alt="Yacht Background"
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-white/70"></div>
+        </div>
+        <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <motion.div
