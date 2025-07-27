@@ -67,8 +67,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
-      <body className="antialiased overflow-x-hidden">
-        <div className="w-full overflow-x-hidden">
+      <body className="antialiased overflow-x-hidden min-h-screen">
+        <div className="w-full overflow-x-hidden relative">
           {children}
         </div>
         

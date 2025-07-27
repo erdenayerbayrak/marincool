@@ -82,7 +82,6 @@ export default function HomePage() {
         />
         
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/images/anasayfa1.jpg" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         

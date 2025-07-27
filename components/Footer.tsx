@@ -39,7 +39,7 @@ export default function Footer({ lang }: FooterProps) {
   const t = content[lang];
 
   return (
-    <footer className="relative bg-primary-navy text-white overflow-hidden">
+    <footer className="relative bg-primary-navy text-white" style={{ overflowX: 'hidden', overflowY: 'hidden', width: '100vw', maxWidth: '100vw' }}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -53,19 +53,19 @@ export default function Footer({ lang }: FooterProps) {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div>
-            <div className="relative w-64 h-16 mb-4">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="relative w-48 sm:w-64 h-12 sm:h-16 mb-4">
               <Image
                 src="/images/logo.png"
                 alt="Marincool Logo"
                 fill
-                sizes="256px"
+                sizes="(max-width: 640px) 192px, 256px"
                 className="object-contain"
               />
             </div>
-            <p className="text-gray-300 text-sm">{t.about}</p>
+            <p className="text-gray-300 text-sm leading-relaxed">{t.about}</p>
           </div>
 
           {/* Quick Links */}
@@ -96,48 +96,53 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Social Media */}
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="text-lg font-semibold mb-4">{t.followUs}</h4>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <a
                 href="https://x.com/MarincoolS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                style={{ touchAction: 'manipulation', minWidth: '44px', minHeight: '44px' }}
               >
-                <FaTwitter className="text-2xl" />
+                <FaTwitter className="text-xl sm:text-2xl" />
               </a>
               <a
                 href="https://www.linkedin.com/company/marincool/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                style={{ touchAction: 'manipulation', minWidth: '44px', minHeight: '44px' }}
               >
-                <FaLinkedin className="text-2xl" />
+                <FaLinkedin className="text-xl sm:text-2xl" />
               </a>
               <a
                 href="https://www.facebook.com/marincoolmarinehvac/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                style={{ touchAction: 'manipulation', minWidth: '44px', minHeight: '44px' }}
               >
-                <FaFacebook className="text-2xl" />
+                <FaFacebook className="text-xl sm:text-2xl" />
               </a>
               <a
                 href="https://www.instagram.com/marincool.com.tr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                style={{ touchAction: 'manipulation', minWidth: '44px', minHeight: '44px' }}
               >
-                <FaInstagram className="text-2xl" />
+                <FaInstagram className="text-xl sm:text-2xl" />
               </a>
               <a
                 href="https://www.youtube.com/@marincool"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                style={{ touchAction: 'manipulation', minWidth: '44px', minHeight: '44px' }}
               >
-                <FaYoutube className="text-2xl" />
+                <FaYoutube className="text-xl sm:text-2xl" />
               </a>
             </div>
           </div>

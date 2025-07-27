@@ -28,17 +28,16 @@ export default function HeroSection({ lang }: HeroSectionProps) {
   const t = content[lang];
 
   return (
-    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center overflow-hidden w-full">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover"
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          poster="/images/hero-poster.jpg"
         >
           <source src="/videos/herovideo.mp4" type="video/mp4" />
           {/* Mobil için optimize edilmiş video */}
@@ -68,19 +67,21 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center px-4"
         >
           <a 
             href="https://wa.me/905515085085" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn btn-primary"
+            className="btn btn-primary min-h-[48px] px-8 py-4 text-center"
+            style={{ touchAction: 'manipulation' }}
           >
             {t.cta1}
           </a>
           <Link
             href={`/${lang}/urunlerimiz`}
-            className="btn btn-secondary"
+            className="btn btn-secondary min-h-[48px] px-8 py-4 text-center"
+            style={{ touchAction: 'manipulation' }}
           >
             {t.cta2}
           </Link>

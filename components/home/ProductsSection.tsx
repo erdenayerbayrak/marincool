@@ -120,7 +120,7 @@ export default function ProductsSection({ lang }: ProductsSectionProps) {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
           {t.products.map((product, index) => (
             <motion.div
               key={product.id}
@@ -171,7 +171,8 @@ export default function ProductsSection({ lang }: ProductsSectionProps) {
                 {/* CTA Button */}
                 <Link
                   href={`/${lang}/${lang === 'tr' ? 'urunlerimiz' : 'products'}#${product.id}`}
-                  className="inline-flex items-center justify-center w-full py-2.5 px-4 bg-primary-navy text-white text-sm font-semibold rounded-xl hover:bg-primary-blue transition-colors duration-200 transform-gpu"
+                  className="inline-flex items-center justify-center w-full py-3 px-4 bg-primary-navy text-white text-sm font-semibold rounded-xl hover:bg-primary-blue transition-colors duration-200 transform-gpu min-h-[44px]"
+                  style={{ touchAction: 'manipulation' }}
                 >
                   {product.link}
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200 transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
