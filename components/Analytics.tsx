@@ -90,7 +90,6 @@ export function HomepageStructuredData() {
         "@id": "https://marincool.com/#localbusiness",
         "name": "Marincool",
         "image": "https://marincool.com/images/marincool-logo.png",
-        "@id": "https://marincool.com",
         "url": "https://marincool.com",
         "telephone": "+90-551-508-50-85",
         "address": {
