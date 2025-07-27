@@ -60,13 +60,17 @@ export const WavyBackground = ({
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     
+    let resizeTimeout: NodeJS.Timeout;
     window.onresize = function () {
-      if (container) {
-        const rect = container.getBoundingClientRect();
-        w = ctx.canvas.width = rect.width;
-        h = ctx.canvas.height = rect.height;
-        ctx.filter = `blur(${blur}px)`;
-      }
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (container) {
+          const rect = container.getBoundingClientRect();
+          w = ctx.canvas.width = rect.width;
+          h = ctx.canvas.height = rect.height;
+          ctx.filter = `blur(${blur}px)`;
+        }
+      }, 100);
     };
     render();
   };
@@ -84,9 +88,9 @@ export const WavyBackground = ({
       ctx.beginPath();
       ctx.lineWidth = waveWidth || 50;
       ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 5) {
+      for (x = 0; x < w; x += 10) { // Increased step size from 5 to 10 for better performance
         var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
+        ctx.lineTo(x, y + h * 0.5);
       }
       ctx.stroke();
       ctx.closePath();
@@ -99,7 +103,7 @@ export const WavyBackground = ({
     ctx.fillStyle = backgroundFill || "black";
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
-    drawWave(5);
+    drawWave(3); // Reduced from 5 to 3 waves for better performance
     animationId = requestAnimationFrame(render);
   };
 

@@ -47,9 +47,10 @@ export default function HeroSection({ lang }: HeroSectionProps) {
       {/* Content */}
       <div className="container relative z-10 text-center text-white">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="gpu-accelerated"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 sm:mb-4">
             {t.title}
@@ -62,10 +63,10 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center px-4"
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row gap-4 justify-center px-4 gpu-accelerated"
         >
           <a 
             href="https://wa.me/905515085085" 
