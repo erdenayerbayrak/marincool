@@ -24,8 +24,9 @@ export default function SplashPage() {
           style={{ width: '100vw', maxWidth: '100vw', height: '100vh' }}
         >
           <source src="/images/karşılamavideo.mp4" type="video/mp4" />
-          {/* Mobil için optimize edilmiş video */}
-          <source src="/images/karşılamavideo-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src="/videos/karşılamavideo3.mp4" type="video/mp4" />
+          {/* Mobil için optimize edilmiş video - fallback */}
+          <source src="/videos/herovideo.mp4" type="video/mp4" media="(max-width: 768px)" />
         </video>
       </div>
 
