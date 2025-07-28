@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
-import { WavyBackground } from "@/components/ui/wavy-background";
+// import { WavyBackground } from "@/components/ui/wavy-background"; // TEMP: Vercel deployment test için devre dışı
 
 // Structured Data for About Page
 const organizationSchema = {
@@ -154,16 +154,8 @@ export default function AboutPage() {
         }}
       />
       
-      {/* Hero Section */}
-      <WavyBackground
-        backgroundFill="#1B2951"
-        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
-        waveWidth={50}
-        blur={10}
-        speed="slow"
-        waveOpacity={0.3}
-        containerClassName="h-[50vh] min-h-[400px]"
-      >
+      {/* Hero Section - TEMP: WavyBackground devre dışı (Vercel deployment test) */}
+      <div className="h-[50vh] min-h-[400px] bg-primary-navy flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -176,7 +168,7 @@ export default function AboutPage() {
             armatörlere özel marin klima sistemleri çözümleri sunuyoruz.
           </p>
         </motion.div>
-      </WavyBackground>
+      </div>
 
       {/* Company Story */}
       <section className="section-padding">

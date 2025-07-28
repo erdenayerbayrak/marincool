@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Netlify için static export
+  // Vercel deployment için normal config
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
   },
-  trailingSlash: true,
+  trailingSlash: false,
   experimental: {
     optimizePackageImports: ['framer-motion', 'react-icons'],
   },

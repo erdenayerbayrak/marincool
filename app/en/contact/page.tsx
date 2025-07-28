@@ -5,7 +5,8 @@ import { useState } from "react";
 import Script from "next/script";
 import Image from "next/image";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
-import { WavyBackground } from "@/components/ui/wavy-background";
+// Temporarily disabled for Vercel deployment testing
+// import { WavyBackground } from "@/components/ui/wavy-background";
 
 // Structured Data for Contact Page (English)
 const localBusinessSchema = {
@@ -177,16 +178,8 @@ export default function ContactPage() {
         }}
       />
       
-      {/* Hero Section */}
-      <WavyBackground
-        backgroundFill="#1B2951"
-        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
-        waveWidth={50}
-        blur={10}
-        speed="slow"
-        waveOpacity={0.3}
-        containerClassName="h-[50vh] min-h-[400px]"
-      >
+      {/* Hero Section - Temporarily disabled WavyBackground for Vercel deployment testing */}
+      <div className="bg-primary-navy h-[50vh] min-h-[400px] flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -199,7 +192,7 @@ export default function ContactPage() {
             We are ready to offer you the most suitable solution.
           </p>
         </motion.div>
-      </WavyBackground>
+      </div>
 
       {/* Contact Info & Form Section */}
       <section className="relative pb-8 sm:pb-12 md:pb-16 lg:pb-24">
