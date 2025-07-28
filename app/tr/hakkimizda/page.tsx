@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { FaCheckCircle, FaUsers, FaCertificate, FaTrophy, FaShip, FaTools } from "react-icons/fa";
-import { WavyBackground } from "@/components/ui/wavy-background";
+// import { WavyBackground } from "@/components/ui/wavy-background"; // MINIMAL TEST
 
 // Structured Data for About Page
 const organizationSchema = {
@@ -154,29 +154,16 @@ export default function AboutPage() {
         }}
       />
       
-      {/* Hero Section */}
-      <WavyBackground
-        backgroundFill="#1B2951"
-        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
-        waveWidth={50}
-        blur={10}
-        speed="slow"
-        waveOpacity={0.3}
-        containerClassName="h-[50vh] min-h-[400px]"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-white"
-        >
-          <h1 className="heading-1 mb-6">Türkiye&apos;nin Lider Marin Klima Sistemleri Uzmanı</h1>
+      {/* Hero Section - MINIMAL TEST */}
+      <div className="h-[50vh] min-h-[400px] bg-blue-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold mb-6">Türkiye&apos;nin Lider Marin Klima Sistemleri Uzmanı</h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90">
             Marincool olarak, denizcilik sektöründe edindiğimiz köklü deneyimle yat sahiplerine ve 
             armatörlere özel marin klima sistemleri çözümleri sunuyoruz.
           </p>
-        </motion.div>
-      </WavyBackground>
+        </div>
+      </div>
 
       {/* Company Story */}
       <section className="section-padding">
