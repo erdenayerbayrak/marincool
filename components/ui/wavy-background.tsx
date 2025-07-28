@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
@@ -27,15 +27,11 @@ export const WavyBackground = ({
   [key: string]: any;
 }) => {
   const noise = createNoise3D();
-  let w: number,
-    h: number,
-    nt: number,
-    i: number,
-    x: number,
-    ctx: any,
-    canvas: any;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const getSpeed = () => {
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const animationIdRef = useRef<number>();
+  const dimensionsRef = useRef({ w: 0, h: 0, nt: 0 });
+  const getSpeed = useCallback(() => {
     switch (speed) {
       case "slow":
         return 0.001;
@@ -44,68 +40,78 @@ export const WavyBackground = ({
       default:
         return 0.001;
     }
-  };
+  }, [speed]);
 
-  const init = useCallback(() => {
-    canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    ctx = canvas.getContext("2d");
-    const container = canvas.parentElement;
-    if (!container) return;
-    
-    const rect = container.getBoundingClientRect();
-    w = ctx.canvas.width = rect.width;
-    h = ctx.canvas.height = rect.height;
-    ctx.filter = `blur(${blur}px)`;
-    nt = 0;
-    
-    let resizeTimeout: NodeJS.Timeout;
-    window.onresize = function () {
-      if (resizeTimeout) clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        if (container) {
-          const rect = container.getBoundingClientRect();
-          w = ctx.canvas.width = rect.width;
-          h = ctx.canvas.height = rect.height;
-          ctx.filter = `blur(${blur}px)`;
-        }
-      }, 100);
-    };
-    render();
-  }, [blur]);
 
-  const waveColors = colors ?? [
+  const waveColors = useMemo(() => colors ?? [
     "#38bdf8",
     "#818cf8",
     "#c084fc",
     "#e879f9",
     "#22d3ee",
-  ];
-  const drawWave = (n: number) => {
-    nt += getSpeed();
-    for (i = 0; i < n; i++) {
-      ctx.beginPath();
-      ctx.lineWidth = waveWidth || 50;
-      ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 10) { // Increased step size from 5 to 10 for better performance
-        var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5);
-      }
-      ctx.stroke();
-      ctx.closePath();
-    }
-  };
+  ], [colors]);
 
-  const animationIdRef = useRef<number>();
-  const render = () => {
-    if (!ctx || !canvas) return;
-    ctx.fillStyle = backgroundFill || "black";
-    ctx.globalAlpha = waveOpacity || 0.5;
-    ctx.fillRect(0, 0, w, h);
-    drawWave(3); // Reduced from 5 to 3 waves for better performance
+  const drawWave = useCallback((n: number) => {
+    if (!ctxRef.current) return;
+    
+    dimensionsRef.current.nt += getSpeed();
+    const { w, h, nt } = dimensionsRef.current;
+    
+    for (let i = 0; i < n; i++) {
+      ctxRef.current.beginPath();
+      ctxRef.current.lineWidth = waveWidth || 50;
+      ctxRef.current.strokeStyle = waveColors[i % waveColors.length];
+      for (let x = 0; x < w; x += 10) {
+        const y = noise(x / 800, 0.3 * i, nt) * 100;
+        ctxRef.current.lineTo(x, y + h * 0.5);
+      }
+      ctxRef.current.stroke();
+      ctxRef.current.closePath();
+    }
+  }, [noise, waveWidth, waveColors, getSpeed]);
+
+  const render = useCallback(() => {
+    if (!ctxRef.current) return;
+    
+    const { w, h } = dimensionsRef.current;
+    ctxRef.current.fillStyle = backgroundFill || "black";
+    ctxRef.current.globalAlpha = waveOpacity || 0.5;
+    ctxRef.current.fillRect(0, 0, w, h);
+    drawWave(3);
     animationIdRef.current = requestAnimationFrame(render);
-  };
+  }, [backgroundFill, waveOpacity, drawWave]);
+
+  const init = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    ctxRef.current = ctx;
+    
+    const container = canvas.parentElement;
+    if (!container) return;
+    
+    const rect = container.getBoundingClientRect();
+    dimensionsRef.current.w = ctx.canvas.width = rect.width;
+    dimensionsRef.current.h = ctx.canvas.height = rect.height;
+    ctx.filter = `blur(${blur}px)`;
+    dimensionsRef.current.nt = 0;
+    
+    let resizeTimeout: NodeJS.Timeout;
+    window.onresize = function () {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (container && ctxRef.current) {
+          const rect = container.getBoundingClientRect();
+          dimensionsRef.current.w = ctxRef.current.canvas.width = rect.width;
+          dimensionsRef.current.h = ctxRef.current.canvas.height = rect.height;
+          ctxRef.current.filter = `blur(${blur}px)`;
+        }
+      }, 100);
+    };
+    render();
+  }, [blur, render]);
 
   useEffect(() => {
     init();
