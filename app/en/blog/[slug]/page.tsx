@@ -8,9 +8,15 @@ type Props = {
 }
 
 export async function generateStaticParams() {
+  // TEMP: Vercel deployment test için blog static generation devre dışı
+  // Bu değişiklik, Vercel'e bu deploy için HİÇBİR blog sayfası oluşturmamasını söyler.
+  return []; 
+  
+  /* ORIGINAL CODE (YORUMA ALINDI):
   return blogPostsEN.map((post) => ({
     slug: post.slug,
   }));
+  */
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
