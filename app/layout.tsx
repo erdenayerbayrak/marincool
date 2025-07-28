@@ -70,8 +70,6 @@ export default function RootLayout({
       <body className="antialiased min-h-full">
         {children}
         
-        {/* Preload critical images */}
-        <link rel="preload" as="image" href="/images/marincool-logo.png" />
       </body>
     </html>
   );
