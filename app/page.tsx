@@ -47,7 +47,8 @@ export default function SplashPage() {
             alt="Marincool Logo"
             width={1100}
             height={275}
-            className="w-auto h-72 lg:h-96 filter brightness-125"
+            className="w-auto h-80 lg:h-96 filter brightness-125"
+            style={{ height: 'auto', maxHeight: '24rem' }}
             priority
           />
         </motion.div>

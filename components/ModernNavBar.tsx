@@ -141,13 +141,10 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                       key={item.name}
                       href={item.url}
                       onClick={(e) => {
+                        e.preventDefault()
                         setActiveTab(item.name)
-                        // Force navigation if needed
-                        setTimeout(() => {
-                          if (window.location.pathname !== item.url) {
-                            window.location.href = item.url
-                          }
-                        }, 50)
+                        // Use router for navigation
+                        window.location.href = item.url
                       }}
                       className={cn(
                         "text-gray-700 hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2 transition-all duration-200",
@@ -265,15 +262,11 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                           key={item.name}
                           href={item.url}
                           onClick={(e) => {
-                            // Ensure navigation happens
+                            e.preventDefault()
                             setActiveTab(item.name)
                             setIsMobileMenuOpen(false)
-                            // Force navigation if needed
-                            setTimeout(() => {
-                              if (window.location.pathname !== item.url) {
-                                window.location.href = item.url
-                              }
-                            }, 100)
+                            // Use direct navigation
+                            window.location.href = item.url
                           }}
                           className={cn(
                             "flex items-center space-x-4 px-4 py-4 rounded-xl transition-all duration-200 group",
