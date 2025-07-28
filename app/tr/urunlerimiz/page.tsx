@@ -16,10 +16,10 @@ const ProductModal = dynamic(() => import("@/components/ui/ProductModal"), {
 
 const products = [
   {
-    id: "vrf",
-    name: "VRF Marin Klima Sistemi",
-    shortDesc: "Büyük yatlar için merkezi klima çözümü",
-    fullDescription: "Denizcilik endüstrisinde VRF Marin Klima Sistemleri, gemilerin iç mekanlarını ideal sıcaklıkta tutmak ve deniz yolculuklarını daha konforlu hale getirmek için kritik bir rol oynar. Marincool olarak, VRF Marin Klima Sistemleri konusundaki uzmanlığımızla denizcilik sektörüne kapsamlı hizmetler sunuyoruz.",
+    id: "multi-split",
+    name: "Multi Split Marin Klima Sistemi",
+    shortDesc: "Çoklu bölge kontrolü ile maksimum konfor",
+    fullDescription: "Multi Split Marin Klima Sistemi, yatınızın farklı bölgelerini bağımsız olarak kontrol etmenizi sağlayan ileri teknoloji ürünüdür. Her kabin için ayrı sıcaklık kontrolü ile mükemmel konfor sağlar. Marincool olarak, Multi Split Marin Klima Sistemleri konusundaki uzmanlığımızla denizcilik sektörüne kapsamlı hizmetler sunuyoruz.",
     features: [
       "Özelleştirilmiş Tasarım ve Kurulum",
       "Bakım ve Onarım Hizmetleri",
@@ -36,7 +36,8 @@ const products = [
     },
     idealFor: "Büyük yatlar",
     icon: FaThermometerHalf,
-    color: "from-blue-500 to-blue-700"
+    color: "from-blue-500 to-blue-700",
+    image: "/images/multisplitmarineklima.png"
   },
   {
     id: "chiller",
@@ -59,7 +60,8 @@ const products = [
     },
     idealFor: "Mega yatlar",
     icon: FaWind,
-    color: "from-teal-500 to-teal-700"
+    color: "from-teal-500 to-teal-700",
+    image: "/images/chillermarineklima.png"
   },
   {
     id: "monoblok",
@@ -82,30 +84,32 @@ const products = [
     },
     idealFor: "Orta boy yatlar",
     icon: FaCog,
-    color: "from-green-500 to-green-700"
+    color: "from-green-500 to-green-700",
+    image: "/images/monoblokmarineklima.png"
   },
   {
-    id: "multi",
-    name: "Multi Marin Klima Sistemi",
-    shortDesc: "Çoklu bölge kontrolü ve konfor",
-    fullDescription: "Deniz taşımacılığı, yolcuların ve gemi personelinin konforunu sağlamanın yanı sıra, iç mekanların verimli bir şekilde ısıtılması ve soğutulmasını gerektirir. Multi Marin Klima Sistemi, bu ihtiyaçları karşılamak için tasarlanmış çoklu iklim kontrolünün ve verimliliğin öne çıktığı bir sistemdir.",
+    id: "fancoil",
+    name: "Fancoil Marin Klima Sistemi",
+    shortDesc: "Kompakt tasarım ile etkili hava dağıtımı",
+    fullDescription: "Fancoil Marin Klima Sistemi, yat iç mekanlarında ideal hava dağıtımı sağlayan kompakt ve verimli bir çözümdür. Düşük gürültü seviyesi ve yüksek performansıyla kabin konforunu maksimize eder. Marincool'un uzman ekibi tarafından denizcilik standartlarına uygun olarak tasarlanmıştır.",
     features: [
-      "Çoklu Bölge Kontrolü",
-      "Yüksek Enerji Verimliliği",
-      "Esneklik ve Özelleştirme",
-      "Uzaktan Kontrol",
-      "Düşük Bakım Gereksinimi",
-      "İleri Teknoloji"
+      "Kompakt Tasarım",
+      "Düşük Gürültü Seviyesi",
+      "Yüksek Hava Dağıtım Kapasitesi",
+      "Kolay Montaj",
+      "Enerji Verimli Motor",
+      "Deniz Ortamına Dayanıklı"
     ],
     specifications: {
-      capacity: "15 kW - 150 kW",
-      zones: "2 - 32 bölge",
-      efficiency: "COP 4.0 - 5.5",
-      warranty: "3 yıl garanti",
+      capacity: "2 kW - 15 kW",
+      airflow: "200 - 1500 m³/h",
+      efficiency: "Yüksek verimlilik",
+      warranty: "2 yıl garanti",
     },
-    idealFor: "Büyük yatlar",
+    idealFor: "Tüm boyut yatlar",
     icon: FaTachometerAlt,
-    color: "from-purple-500 to-purple-700"
+    color: "from-purple-500 to-purple-700",
+    image: "/images/fancoilklima.png"
   },
   {
     id: "split",
@@ -128,7 +132,8 @@ const products = [
     },
     idealFor: "Küçük yatlar",
     icon: FaShieldAlt,
-    color: "from-orange-500 to-orange-700"
+    color: "from-orange-500 to-orange-700",
+    image: "/images/splitmarineklima.png"
   },
 ];
 
@@ -146,8 +151,8 @@ const productsPageSchema = {
       {
         "@type": "Product",
         "position": 1,
-        "name": "VRF Marin Klima Sistemi",
-        "url": "https://marincool.com/tr/urunlerimiz#vrf"
+        "name": "Multi Split Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#multi-split"
       },
       {
         "@type": "Product",
@@ -164,8 +169,8 @@ const productsPageSchema = {
       {
         "@type": "Product",
         "position": 4,
-        "name": "Multi Marin Klima Sistemi",
-        "url": "https://marincool.com/tr/urunlerimiz#multi"
+        "name": "Fancoil Marin Klima Sistemi",
+        "url": "https://marincool.com/tr/urunlerimiz#fancoil"
       },
       {
         "@type": "Product",
@@ -268,16 +273,30 @@ export default function ProductsPage() {
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden border border-gray-100"
               >
                 
-                {/* Card Header */}
-                <div className={`h-32 bg-gradient-to-r ${product.color} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/10" />
-                  <div className="relative h-full flex items-start justify-center pt-3">
-                    <product.icon className="text-4xl text-white" />
-                  </div>
-                  <div className="absolute bottom-4 left-6 text-white">
-                    <h3 className="text-lg font-bold">{product.name}</h3>
-                    <p className="text-sm opacity-90">{product.shortDesc}</p>
-                  </div>
+                {/* Card Header with Product Image */}
+                <div className="h-48 bg-white relative overflow-hidden border-b border-gray-100">
+                  {product.image ? (
+                    <div className="relative h-full flex items-center justify-center p-4">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        width={200}
+                        height={150}
+                        className="object-contain w-full h-full"
+                        style={{ maxWidth: '100%', maxHeight: '100%' }}
+                      />
+                    </div>
+                  ) : (
+                    <div className={`h-full bg-gradient-to-r ${product.color} relative flex items-center justify-center`}>
+                      <product.icon className="text-5xl text-white" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Title Section */}
+                <div className={`px-6 py-4 bg-gradient-to-r ${product.color}`}>
+                  <h3 className="text-lg font-bold text-white">{product.name}</h3>
+                  <p className="text-sm text-white/90">{product.shortDesc}</p>
                 </div>
 
                 {/* Card Content */}
