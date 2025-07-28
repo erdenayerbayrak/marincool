@@ -7,8 +7,7 @@ import { useState, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaThermometerHalf, FaWind, FaTachometerAlt, FaCog, FaShieldAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
-// Temporarily disabled for Vercel deployment testing
-// import { WavyBackground } from "@/components/ui/wavy-background";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 // Lazy load modal for better performance
 const ProductModal = dynamic(() => import("@/components/ui/ProductModal"), {
@@ -235,8 +234,16 @@ export default function ProductsPage() {
         }}
       />
       
-      {/* Hero Section - Temporarily disabled WavyBackground for Vercel deployment testing */}
-      <div className="bg-primary-navy h-[50vh] min-h-[400px] flex items-center justify-center">
+      {/* Hero Section */}
+      <WavyBackground
+        backgroundFill="#1B2951"
+        colors={["#3498db", "#2980b9", "#5dade2", "#aed6f1", "#85c1e2"]}
+        waveWidth={50}
+        blur={10}
+        speed="slow"
+        waveOpacity={0.3}
+        containerClassName="h-[50vh] min-h-[400px]"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -249,7 +256,7 @@ export default function ProductsPage() {
             Maximum comfort guarantee at sea with our VRF, Chiller and Monoblock systems.
           </p>
         </motion.div>
-      </div>
+      </WavyBackground>
 
       {/* Products Grid */}
       <section className="section-padding">
