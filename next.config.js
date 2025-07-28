@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export', // Vercel için kaldırıldı
   images: {
-    unoptimized: true,
-    loader: 'custom',
-    loaderFile: './image-loader.js',
+    // unoptimized: true, // Vercel için kaldırıldı
+    // loader: 'custom', // Vercel için kaldırıldı
+    // loaderFile: './image-loader.js', // Vercel için kaldırıldı
   },
   trailingSlash: true,
-  distDir: 'out',
+  // distDir: 'out', // Vercel için kaldırıldı
   basePath: '',
   assetPrefix: '',
   experimental: {
