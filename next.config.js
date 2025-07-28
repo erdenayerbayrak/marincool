@@ -1,15 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Static export için geri eklendi
+  // Vercel için static export'u kaldırdık
   images: {
-    unoptimized: true, // Static export için gerekli
-    loader: 'custom',
-    loaderFile: './image-loader.js',
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
   },
-  trailingSlash: true,
-  distDir: 'out', // Static export için gerekli
-  basePath: '',
-  assetPrefix: '',
+  trailingSlash: false,
   experimental: {
     optimizePackageImports: ['framer-motion', 'react-icons'],
   },

@@ -1,12 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 
 export const metadata: Metadata = {
   title: "Marincool - Premium Marin Klima Sistemleri | Türkiye",
   description: "Marincool olarak VRF, Chiller ve Monoblok marin klima sistemleri ile yat sahiplerine profesyonel klima çözümleri sunuyoruz. Muğla merkezli uzman marin klima servisi.",
   keywords: "marin klima sistemleri, yat kliması, tekne klima servisi, Marincool, VRF marin klima, Chiller marin klima, Monoblok klima, Muğla marin klima",
   authors: [{ name: "Marincool" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   alternates: {
     canonical: "https://marincool.com",
