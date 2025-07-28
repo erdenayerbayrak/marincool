@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function SplashPage() {
   const router = useRouter();
@@ -47,7 +47,7 @@ export default function SplashPage() {
             alt="Marincool Logo"
             width={1100}
             height={275}
-            className="w-auto h-52 lg:h-96 filter brightness-125"
+            className="w-auto h-72 lg:h-96 filter brightness-125"
             priority
           />
         </motion.div>
@@ -86,7 +86,7 @@ export default function SplashPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
-          className="flex space-x-6 mt-8"
+          className="flex flex-wrap justify-center gap-4 mt-8"
         >
           <a
             href="https://wa.me/905515085085"
@@ -97,7 +97,7 @@ export default function SplashPage() {
             <FaWhatsapp className="text-xl" />
           </a>
           <a
-            href="https://instagram.com/marincoolklima"
+            href="https://www.instagram.com/marincool.com.tr"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center hover:from-pink-600 hover:to-purple-700 transition-all duration-300 hover:scale-110 shadow-lg"
@@ -105,7 +105,7 @@ export default function SplashPage() {
             <FaInstagram className="text-xl" />
           </a>
           <a
-            href="https://facebook.com/marincoolklima"
+            href="https://www.facebook.com/marincoolmarinehvac/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 hover:scale-110 shadow-lg"
@@ -113,12 +113,28 @@ export default function SplashPage() {
             <FaFacebook className="text-xl" />
           </a>
           <a
-            href="https://linkedin.com/company/marincool"
+            href="https://www.linkedin.com/company/marincool/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 shadow-lg"
           >
             <FaLinkedin className="text-xl" />
+          </a>
+          <a
+            href="https://x.com/MarincoolS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <FaTwitter className="text-xl" />
+          </a>
+          <a
+            href="https://www.youtube.com/@marincool"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <FaYoutube className="text-xl" />
           </a>
         </motion.div>
       </div>

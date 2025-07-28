@@ -36,7 +36,11 @@ const organizationSchema = {
     "availableLanguage": ["Turkish", "English"]
   },
   "sameAs": [
-    "https://www.instagram.com/marincool.com.tr/"
+    "https://www.instagram.com/marincool.com.tr/",
+    "https://www.facebook.com/marincoolmarinehvac/",
+    "https://www.linkedin.com/company/marincool/",
+    "https://x.com/MarincoolS",
+    "https://www.youtube.com/@marincool"
   ],
   "numberOfEmployees": {
     "@type": "QuantitativeValue",

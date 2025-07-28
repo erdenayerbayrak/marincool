@@ -22,8 +22,19 @@ interface NavBarProps {
 }
 
 export function ModernNavBar({ items, lang, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
+  const [activeTab, setActiveTab] = useState("")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Set active tab based on current path
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname
+      const currentItem = items.find(item => item.url === currentPath)
+      if (currentItem) {
+        setActiveTab(currentItem.name)
+      }
+    }
+  }, [items])
 
   // Close mobile menu when clicking outside and prevent body scroll when menu is open
   useEffect(() => {
@@ -44,14 +55,14 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
       document.addEventListener('click', handleClickOutside)
       document.addEventListener('keydown', handleEscKey)
       // Prevent body scroll when menu is open - mobile specific
-      if (window.innerWidth <= 768) {
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
         document.body.style.position = 'fixed'
         document.body.style.top = `-${window.scrollY}px`
         document.body.style.width = '100%'
       }
     } else {
       // Restore body scroll when menu is closed - mobile specific
-      if (window.innerWidth <= 768) {
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
         const scrollY = document.body.style.top
         document.body.style.position = ''
         document.body.style.top = ''
@@ -64,7 +75,7 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEscKey)
       // Restore scroll position on cleanup
-      if (window.innerWidth <= 768) {
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
         const scrollY = document.body.style.top
         document.body.style.position = ''
         document.body.style.top = ''
@@ -129,7 +140,15 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                     <Link
                       key={item.name}
                       href={item.url}
-                      onClick={() => setActiveTab(item.name)}
+                      onClick={(e) => {
+                        setActiveTab(item.name)
+                        // Force navigation if needed
+                        setTimeout(() => {
+                          if (window.location.pathname !== item.url) {
+                            window.location.href = item.url
+                          }
+                        }, 50)
+                      }}
                       className={cn(
                         "text-gray-700 hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2 transition-all duration-200",
                         isActive && "bg-primary-navy text-white",
@@ -220,8 +239,8 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                     <Image
                       src="/images/logo.png"
                       alt="Marincool"
-                      width={90}
-                      height={22}
+                      width={120}
+                      height={30}
                       className="block"
                       style={{ width: 'auto' }}
                     />
@@ -245,9 +264,16 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
                         <Link
                           key={item.name}
                           href={item.url}
-                          onClick={() => {
+                          onClick={(e) => {
+                            // Ensure navigation happens
                             setActiveTab(item.name)
                             setIsMobileMenuOpen(false)
+                            // Force navigation if needed
+                            setTimeout(() => {
+                              if (window.location.pathname !== item.url) {
+                                window.location.href = item.url
+                              }
+                            }, 100)
                           }}
                           className={cn(
                             "flex items-center space-x-4 px-4 py-4 rounded-xl transition-all duration-200 group",
