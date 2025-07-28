@@ -86,73 +86,65 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
           className,
         )}
       >
-        <div className="mx-auto max-w-7xl px-3 sm:px-4">
-          <div className="flex items-center justify-between h-14 sm:h-16">
-            {/* Mobile Logo - Ultra Compact */}
-            <Link href={`/${lang}`} className="flex items-center flex-shrink-0 lg:hidden">
-              <Image
-                src="/images/marincool-logo.png"
-                alt="Marincool"
-                width={80}
-                height={32}
-                className="object-contain h-8"
-                priority
-              />
-            </Link>
-
-            {/* Desktop Logo */}
-            <Link href={`/${lang}`} className="hidden lg:flex items-center flex-shrink-0">
-              <div className="bg-primary-navy rounded px-1.5 py-0.5 flex items-center justify-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-20 items-center justify-between">
+            {/* Mobile Logo - Desktop ile Aynı Stil */}
+            <div className="flex-shrink-0 lg:hidden">
+              <Link href={`/${lang}`} className="bg-primary-navy px-1 py-1 rounded flex items-center h-10">
                 <Image
                   src="/images/logo.png"
                   alt="Marincool Logo"
-                  width={90}
+                  width={70}
                   height={18}
-                  className="object-contain"
+                  className="block"
+                  style={{ width: 'auto' }}
                   priority
                 />
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
-              {items.map((item) => {
-                const Icon = item.icon
-                const isActive = activeTab === item.name
-
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.url}
-                    onClick={() => setActiveTab(item.name)}
-                    className={cn(
-                      "relative flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-200",
-                      "text-gray-700 hover:text-primary-blue hover:bg-gray-50",
-                      isActive && "bg-primary-navy text-white",
-                    )}
-                  >
-                    <Icon size={16} strokeWidth={2} />
-                    <span className="text-sm font-medium">{item.name}</span>
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute inset-0 bg-primary-navy rounded-full -z-10"
-                        initial={false}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 30,
-                        }}
-                      />
-                    )}
-                  </Link>
-                )
-              })}
+              </Link>
             </div>
 
-            {/* Desktop Right Section */}
-            <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
+            {/* Desktop Logo - Navbar Yüksekliğine Uygun */}
+            <div className="flex-shrink-0 hidden lg:block">
+              <Link href={`/${lang}`} className="bg-primary-navy px-1 py-1 rounded flex items-center h-12">
+                <Image
+                  src="/images/logo.png"
+                  alt="Marincool Logo"
+                  width={80}
+                  height={20}
+                  className="block"
+                  style={{ width: 'auto' }}
+                  priority
+                />
+              </Link>
+            </div>
 
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:block">
+              <div className="flex items-baseline space-x-4">
+                {items.map((item) => {
+                  const Icon = item.icon
+                  const isActive = activeTab === item.name
+
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.url}
+                      onClick={() => setActiveTab(item.name)}
+                      className={cn(
+                        "text-gray-700 hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2 transition-all duration-200",
+                        isActive && "bg-primary-navy text-white",
+                      )}
+                    >
+                      <Icon size={16} strokeWidth={2} />
+                      <span>{item.name}</span>
+                    </Link>
+                  )
+                })}
+              </div>
+            </nav>
+
+            {/* Desktop Right Section */}
+            <div className="hidden lg:flex items-center space-x-3">
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/905515085085"
@@ -224,13 +216,14 @@ export function ModernNavBar({ items, lang, className }: NavBarProps) {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                  <div className="flex items-center">
+                  <div className="bg-primary-navy px-1 py-1 rounded flex items-center">
                     <Image
                       src="/images/logo.png"
                       alt="Marincool"
-                      width={100}
-                      height={24}
-                      className="object-contain"
+                      width={90}
+                      height={22}
+                      className="block"
+                      style={{ width: 'auto' }}
                     />
                   </div>
                   <button
